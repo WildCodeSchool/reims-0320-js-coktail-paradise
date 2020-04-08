@@ -1,4 +1,5 @@
-Made By Himeur Malik
+Made By Himeur Malik, Mora Angelique, Perrin Lucas
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
