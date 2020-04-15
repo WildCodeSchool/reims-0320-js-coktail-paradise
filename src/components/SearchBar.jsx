@@ -1,10 +1,11 @@
 import React from 'react';
 import TextInput from './TextInput';
+import Button from './Button';
 
 const SearchBar = () => (
   <div>
     <TextInput />
-    <div>intégrer le button</div>
+    <Button />
   </div>
 );
 
