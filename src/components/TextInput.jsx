@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TextInput = () => (
-  <input type="text" />
+const TextInput = ({setText}) => (
+  <input onChange={(event) => setText(event.target.value)} type="text" />
 );
 
 export default TextInput;
