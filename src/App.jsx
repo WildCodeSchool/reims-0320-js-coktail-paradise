@@ -1,34 +1,37 @@
 import React from 'react';
-import SearchBar from './components/SearchBar';
-import './App.css';
-/*import CocktailList from './components/CocktailList';*/
 import Axios from 'axios';
+import SearchBar from './components/SearchBar';
+import './components/makeYourCocktail.css';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       keywords: null,
-      cocktails: []
+      cocktails: [],
     };
   }
 
-setKeywords = (keywords) => this.setState({keywords})
+setKeywords = (keywords) => this.setState({ keywords })
 
 search = () => {
   Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords}`)
     .then((response) => response.data)
     .then((data) => {
-      this.setState({ cocktails: data.drinks.map((drink) => drink.strDrink)
-      });
+      this.setState({ cocktails: data.drinks.map((drink) => drink.strDrink) });
     });
 }
 
 render() {
   return (
-    <div className="App">
-      <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
-  {this.state.cocktails.map((cocktail) => <li>{cocktail}</li>)}
+    <div className="makeYourCocktail">
+      <div className="searchBar">
+        <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
+      </div>
+      <ul>
+        {this.state.cocktails.map((cocktail) => <li>{cocktail}</li>)}
+      </ul>
     </div>
   );
 }
