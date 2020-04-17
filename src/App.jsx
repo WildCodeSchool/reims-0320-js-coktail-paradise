@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './components/SearchBar';
-import './App.css';
+import './components/makeYourCocktail.css';
 /*import CocktailList from './components/CocktailList';*/
 import Axios from 'axios';
 
@@ -26,9 +26,13 @@ search = () => {
 
 render() {
   return (
-    <div className="App">
-      <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
-  {this.state.cocktails.map((cocktail) => <li>{cocktail}</li>)}
+    <div className="makeYourCocktail">
+      <div className="searchBar">
+        <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
+      </div>
+      <ul>
+        {this.state.cocktails.map((cocktail) => <li>{cocktail}</li>)}
+      </ul>
     </div>
   );
 }
