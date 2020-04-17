@@ -26,20 +26,13 @@ search = () => {
 
 render() {
   return (
-    <div>
-      <head>
-        <style>@import url(`https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap`);</style>
-      </head>
-      <body>
-        <div className="makeYourCocktail">
-          <div className="searchBar">
-            <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
-          </div>
-          <ul>
-            {this.state.cocktails.map((cocktail) => <li>{cocktail}</li>)}
-          </ul>
-        </div>
-      </body>
+    <div className="makeYourCocktail">
+      <div className="searchBar">
+        <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
+      </div>
+      <ul>
+        {this.state.cocktails.map((cocktail) => <li>{cocktail}</li>)}
+      </ul>
     </div>
   );
 }
