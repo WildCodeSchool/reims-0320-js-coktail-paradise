@@ -2,7 +2,6 @@ import React from 'react';
 import Axios from 'axios';
 import SearchBar from './components/SearchBar';
 import './components/makeYourCocktail.css';
-/* import CocktailList from './components/CocktailList'; */
 
 
 class App extends React.Component {
