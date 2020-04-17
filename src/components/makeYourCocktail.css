@@ -22,6 +22,8 @@ ul{
 
 li {
     background-color: #0B899D;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
     margin-bottom: 1vh;
     list-style-type: none;
     text-align: center;
@@ -30,5 +32,7 @@ li {
     margin-bottom: 1rem;
     border-radius: 10px;
     max-width: 60vw;
-    box-shadow: black 2px 5px 10px;
+    box-shadow: black 2px 5px 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
