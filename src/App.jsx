@@ -17,21 +17,37 @@ class App extends React.Component {
   setKeywords = (keywords) => this.setState({ keywords });
 
   getData = () => {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    for (let i = 0; i < 26; i++) {
-      setTimeout(() => {
-        Axios.get(
-          `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${alphabet[i]}`,
-        )
-          .then((response) => response.data)
-          .then((data) => {
-            this.setState({
-              allCocktails: [...this.state.allCocktails, data.drinks],
-            });
+    /*const fetchAPIForLetter = (letter) => {
+      if (letter.charCodeAt() > 'z'.charCodeAt()) {
+        return;
+      }
+  
+      Axios.get(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`,
+      )
+        .then((response) => response.data)
+        .then((data) => {
+          this.setState({
+            allCocktails: [...this.state.allCocktails, {letter, coktails: data.drinks}],
           });
-      }, 500);
-    }
-    console.log(this.state.allCocktails);
+        });
+
+      fetchAPIForLetter(String.fromCharCode(letter.charCodeAt() + 1));
+    };
+    fetchAPIForLetter('a');*/
+
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    alphabet.split('').forEach((letter) => {
+      Axios.get(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`,
+      )
+        .then((response) => response.data)
+        .then((data) => {
+          this.setState({
+            allCocktails: [...this.state.allCocktails, { letter, coktails: data.drinks }],
+          });
+        });
+    });
   };
 
   search = () => {
