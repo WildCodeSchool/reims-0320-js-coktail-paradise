@@ -26,7 +26,7 @@ class App extends React.Component {
           .then((response) => response.data)
           .then((data) => {
             this.setState({
-              allCocktails: this.state.allCocktails.push(data.drinks),
+              allCocktails: [...this.state.allCocktails, data.drinks],
             });
           });
       }, 500);
