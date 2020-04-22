@@ -1,4 +1,5 @@
 import React from 'react';
+import './cocltail.css'
 
 
 class Cocktail extends React.Component {
@@ -21,7 +22,7 @@ class Cocktail extends React.Component {
           <div>
             description blablabla
           </div>
-          <img src={this.props.cocktail.strDrinkThumb} alt = {this.props.cocktail.strDrink}/>
+          <img className="cocktailThumb" src={this.props.cocktail.strDrinkThumb} alt = {this.props.cocktail.strDrink}/>
         </div>
       </div>
     );

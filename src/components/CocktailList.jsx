@@ -4,7 +4,7 @@ import Cocktail from './Cocktail';
 
 function CocktailList({list}) {
   return (
-    <div className="cocktailList">
+    <div className="cocktailTable">
       {list.map((cocktail) => {return <Cocktail cocktail={cocktail}/>})}
     </div>
   );

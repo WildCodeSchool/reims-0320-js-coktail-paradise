@@ -1,5 +1,6 @@
 body{
     background-color: #e4dabe;
+    
 }
 
 .searchBar{
@@ -15,12 +16,17 @@ body{
     align-items: center;
 }
 
+.cocktailTable {
+    display: flex;
+    flex-direction: row;
+}
 
 .classCocktail {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 1rem;
 }
 
 .cocktails {
@@ -37,7 +43,7 @@ body{
     width: fit-content;
     box-shadow: black 2px 5px 8px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     border: none;
 }
 .cocktailsClicked {
@@ -52,7 +58,7 @@ body{
     border-radius: 10px;
     box-shadow: black 2px 5px 8px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     width: fit-content;
 }
 
@@ -64,4 +70,10 @@ body{
 .cocktailDescriptionOn {
     display: block;
     text-align: center;
+    
+}
+
+.cocktailThumb {
+    width: 80vw;
+    border-radius: 20px;
 }
