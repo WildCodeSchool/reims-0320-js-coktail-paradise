@@ -20,7 +20,7 @@ search = () => {
   Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords}`)
     .then((response) => response.data)
     .then((data) => {
-      this.setState({ cocktails: data.drinks.map((drink) => drink) });
+      this.setState({ cocktails: data.drinks });
     });
 }
 
@@ -31,7 +31,7 @@ render() {
         <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
       </div>
       <div>
-        <CocktailList liste = {this.state.cocktails} />
+        <CocktailList list = {this.state.cocktails} />
       </div>
       
 

@@ -21,7 +21,7 @@ class Cocktail extends React.Component {
           <div>
             description blablabla
           </div>
-          <img src={this.props.cocktail.strDrinkThumb} alt = 'il devrai y avoir une image ici'/>
+          <img src={this.props.cocktail.strDrinkThumb} alt = {this.props.cocktail.strDrink}/>
         </div>
       </div>
     );

@@ -2,10 +2,10 @@ import React from 'react';
 import Cocktail from './Cocktail';
 
 
-function CocktailList({liste}) {
+function CocktailList({list}) {
   return (
     <div className="cocktailList">
-      {liste.map((cocktail) => {return <Cocktail cocktail={cocktail}/>})}
+      {list.map((cocktail) => {return <Cocktail cocktail={cocktail}/>})}
     </div>
   );
 }
