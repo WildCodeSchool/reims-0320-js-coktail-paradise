@@ -19,6 +19,7 @@ body{
 .cocktailTable {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .classCocktail {
@@ -27,6 +28,7 @@ body{
     justify-content: center;
     align-items: center;
     padding-left: 1rem;
+    
 }
 
 .cocktails {
@@ -52,14 +54,14 @@ body{
     text-shadow: black 1px 1px 0px;
     margin-bottom: 1vh;
     list-style-type: none;
-    color: white;
-    padding: .3rem;
+    color: black;
     margin-bottom: 1rem;
     border-radius: 10px;
     box-shadow: black 2px 5px 8px;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     width: fit-content;
+   
 }
 
 .cocktailDescriptionOff {
@@ -76,4 +78,5 @@ body{
 .cocktailThumb {
     width: 80vw;
     border-radius: 20px;
+    padding-bottom: 1rem;
 }
