@@ -15,12 +15,15 @@ body{
     align-items: center;
 }
 
-ul{
-    margin: 0;
-    padding: 0;
+
+.classCocktail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-li {
+.cocktails {
     background-color: #0B899D;
     font-family: 'Kalam', cursive;
     text-shadow: black 1px 1px 0px;
@@ -31,8 +34,34 @@ li {
     padding: .3rem;
     margin-bottom: 1rem;
     border-radius: 10px;
-    max-width: 60vw;
+    width: fit-content;
     box-shadow: black 2px 5px 8px;
     font-weight: bold;
     font-size: 1.2rem;
+    border: none;
+}
+.cocktailsClicked {
+    background-color: white;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
+    margin-bottom: 1vh;
+    list-style-type: none;
+    color: white;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: black 2px 5px 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: fit-content;
+}
+
+.cocktailDescriptionOff {
+    display: none;
+    text-align: center;
+}
+
+.cocktailDescriptionOn {
+    display: block;
+    text-align: center;
 }

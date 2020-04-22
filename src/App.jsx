@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import SearchBar from './components/SearchBar';
 import './components/makeYourCocktail.css';
+import CocktailList from './components/CocktailList'
 
 
 class App extends React.Component {
@@ -19,7 +20,7 @@ search = () => {
   Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords}`)
     .then((response) => response.data)
     .then((data) => {
-      this.setState({ cocktails: data.drinks.map((drink) => drink.strDrink) });
+      this.setState({ cocktails: data.drinks });
     });
 }
 
@@ -29,9 +30,11 @@ render() {
       <div className="searchBar">
         <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
       </div>
-      <ul>
-        {this.state.cocktails.map((cocktail) => <li>{cocktail}</li>)}
-      </ul>
+      <div>
+        <CocktailList list = {this.state.cocktails} />
+      </div>
+      
+
     </div>
   );
 }

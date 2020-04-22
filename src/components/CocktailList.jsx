@@ -1,10 +1,11 @@
 import React from 'react';
 import Cocktail from './Cocktail';
 
-function CocktailList() {
+
+function CocktailList({list}) {
   return (
     <div className="cocktailList">
-      <Cocktail />
+      {list.map((cocktail) => {return <Cocktail cocktail={cocktail}/>})}
     </div>
   );
 }
