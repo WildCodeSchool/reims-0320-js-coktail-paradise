@@ -2,7 +2,8 @@ import React from 'react';
 import Axios from 'axios';
 import SearchBar from './components/SearchBar';
 import './components/makeYourCocktail.css';
-import CocktailList from './components/CocktailList'
+import CocktailList from './components/CocktailList';
+import ButtonShow from './components/ButtonShow';
 
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
     this.state = {
       keywords: null,
       cocktails: [],
+      allCocktailList: [],
     };
   }
 
@@ -28,13 +30,19 @@ render() {
   return (
     <div className="makeYourCocktail">
       <div className="searchBar">
+        <h2>Ingredient 1</h2>
+        <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
+      </div>
+      <div className="searchBar">
+        <h2>Ingredient 2</h2>
         <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
       </div>
       <div>
-        <CocktailList list = {this.state.cocktails} />
+        <CocktailList list={this.state.cocktails} />
       </div>
-      
-
+      <div>
+        <ButtonShow onClick={() => this.setState ({ allCocktailList: this.state.cocktails.filter( (allCocktailList, index) => this.state.cocktails.indexOf(allCocktailList) !== index) }) } />
+      </div>
     </div>
   );
 }
