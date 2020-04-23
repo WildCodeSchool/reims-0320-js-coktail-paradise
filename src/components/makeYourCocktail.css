@@ -18,8 +18,10 @@ body{
 
 .cocktailTable {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw;
 }
 
 .classCocktail {
@@ -27,10 +29,29 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 1rem;
+    
     
 }
 
+.butonCliked {
+    background-color: #0B899D;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
+    margin-bottom: 1vh;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: black 2px 5px 8px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    border: none;
+    margin : 0.5rem;
+    width: 70vw;
+}
 .cocktails {
     background-color: #0B899D;
     font-family: 'Kalam', cursive;
@@ -45,38 +66,38 @@ body{
     width: fit-content;
     box-shadow: black 2px 5px 8px;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1rem;
     border: none;
-}
-.cocktailsClicked {
-    background-color: white;
-    font-family: 'Kalam', cursive;
-    text-shadow: black 1px 1px 0px;
-    margin-bottom: 1vh;
-    list-style-type: none;
-    color: black;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    box-shadow: black 2px 5px 8px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    width: fit-content;
-   
+    margin : 0.5rem;
 }
 
-.cocktailDescriptionOff {
+   
+
+
+.hideDescription {
     display: none;
+    text-align: center;
+}
+.showDescription {
+    display: inline;
     text-align: center;
 }
 
 .cocktailDescriptionOn {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+ 
     
+    
+
 }
 
 .cocktailThumb {
-    width: 80vw;
+    width: 90vw;
     border-radius: 20px;
-    padding-bottom: 1rem;
+
 }

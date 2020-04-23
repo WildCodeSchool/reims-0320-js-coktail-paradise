@@ -14,13 +14,13 @@ class Cocktail extends React.Component {
 
   render() {
     return (
-      <div className="classCocktail">
-        <button type="button" onClick={this.clicked} className={this.state.clicked? 'cocktailsClicked' : 'cocktails'}>
+      <div className={this.state.clicked? 'cocktailDescriptionOn' : ''}>
+        <button type="button" onClick={this.clicked} className={this.state.clicked? 'butonCliked' : 'cocktails'}>
           {this.props.cocktail.strDrink}
         </button>
-        <div className={this.state.clicked? 'cocktailDescriptionOn' : 'cocktailDescriptionOff'}>
+        <div className={this.state.clicked? 'showDescriptionOn' : 'hideDescription'}>
           <div>
-            description blablabla
+            
           </div>
           <img className="cocktailThumb" src={this.props.cocktail.strDrinkThumb} alt = {this.props.cocktail.strDrink}/>
         </div>
