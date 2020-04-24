@@ -14,7 +14,7 @@ class App extends React.Component {
       keywords2: null,
       cocktails1: [],
       cocktails2: [],
-      cocktailFilter: [],
+      intersection: [],
     };
   }
 
@@ -38,7 +38,7 @@ searchIngredient2 = () => {
 }
 
 compare = () => {
-  let intersection = this.state.cocktails1.filter(cocktail1 => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1);
+  this.setState ({ intersection:  this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1)})
 }
 
 
@@ -54,7 +54,7 @@ render() {
         <SearchBar setKeywords={this.setKeywords2} onSearch={this.searchIngredient2} />
       </div>
       <div>
-        <CocktailList list={this.intersection === undefined ? '' : this.intersection} />
+        <CocktailList list={this.state.intersection === undefined ? [""] : this.state.intersection} />
       </div>
       <div>
         <ButtonShow onClick={this.compare} />
@@ -63,5 +63,6 @@ render() {
   );
 }
 }
-
+//Tequila
+//Triple sec
 export default App;
