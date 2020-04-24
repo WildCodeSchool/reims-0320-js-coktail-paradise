@@ -10,38 +10,54 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      keywords: null,
-      cocktails: [],
-      allCocktailList: [],
+      keywords1: null,
+      keywords2: null,
+      cocktails1: [],
+      cocktails2: [],
+      cocktailFilter: [],
     };
   }
 
-setKeywords = (keywords) => this.setState({ keywords })
+setKeywords1 = (keywords1) => this.setState({ keywords1 })
+setKeywords2 = (keywords2) => this.setState({ keywords2 })
 
-search = () => {
-  Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords}`)
+searchIngredient1 = () => {
+  Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords1}`)
     .then((response) => response.data)
     .then((data) => {
-      this.setState({ cocktails: data.drinks });
+      this.setState({ cocktails1: data.drinks });
     });
 }
+
+searchIngredient2 = () => {
+  Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords2}`)
+    .then((response) => response.data)
+    .then((data) => {
+      this.setState({ cocktails2: data.drinks });
+    });
+}
+
+compare = () => {
+  let intersection = this.state.cocktails1.filter(cocktail1 => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1);
+}
+
 
 render() {
   return (
     <div className="makeYourCocktail">
       <div className="searchBar">
         <h2>Ingredient 1</h2>
-        <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
+        <SearchBar setKeywords={this.setKeywords1} onSearch={this.searchIngredient1} />
       </div>
       <div className="searchBar">
         <h2>Ingredient 2</h2>
-        <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
+        <SearchBar setKeywords={this.setKeywords2} onSearch={this.searchIngredient2} />
       </div>
       <div>
-        <CocktailList list={this.state.cocktails} />
+        <CocktailList list={this.intersection === undefined ? '' : this.intersection} />
       </div>
       <div>
-        <ButtonShow onClick={() => this.setState ({ allCocktailList: this.state.cocktails.filter( (allCocktailList, index) => this.state.cocktails.indexOf(allCocktailList) !== index) }) } />
+        <ButtonShow onClick={this.compare} />
       </div>
     </div>
   );
