@@ -2,7 +2,7 @@ import React from 'react';
 
 const ButtonShow = ({ onClick }) => (
   <button onClick={onClick} type="button">
-    Show me cocktails! 
+    Show me cocktails!
   </button>
 );
 
