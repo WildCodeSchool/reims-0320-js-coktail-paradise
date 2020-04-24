@@ -26,15 +26,15 @@ search = () => {
 
 render() {
   return (
-    <div className="makeYourCocktail">
-      <div className="searchBar">
-        <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
+    <div className="App">
+      <div className="makeYourCocktail">
+        <div className="searchBar">
+          <SearchBar setKeywords={this.setKeywords} onSearch={this.search} />
+        </div>
+        <div>
+          <CocktailList list = {this.state.cocktails} />
+        </div>
       </div>
-      <div>
-        <CocktailList list = {this.state.cocktails} />
-      </div>
-      
-
     </div>
   );
 }
