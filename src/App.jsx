@@ -63,6 +63,4 @@ render() {
   );
 }
 }
-//Tequila
-//Triple sec
 export default App;
