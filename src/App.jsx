@@ -15,12 +15,17 @@ class App extends React.Component {
       cocktails1: [],
       cocktails2: [],
       intersection: [],
-      errorMessage  : 'ERROOOOOOOOOOOOOORS',
+      errorMessage: 'ERROOOOOOOOOOOOOORS',
+      errorShow: false,
     };
   }
 
 setKeywords1 = (keywords1) => this.setState({ keywords1 })
 setKeywords2 = (keywords2) => this.setState({ keywords2 })
+
+manageError = () => {
+  this.setState({ errorShow : !this.state.errorShow });
+}
 
 searchIngredient1 = () => {
   
@@ -43,11 +48,14 @@ searchIngredient2 = () => {
 compare = () => {
   if (this.state.cocktails1 === undefined || this.state.cocktails2 === undefined) {
     this.setState ({ errorMessage : 'Il manque un ingrédient' })
+    this.setState ({ errorShow : true })
   } else {
     this.setState ({ intersection: [] });
     this.setState ({ intersection:  this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1)})
     if (this.state.intersection.length === 0) {
       this.setState ({ errorMessage :'aucun cocktail ne contient ces ingrédients'});
+      this.setState ({ errorShow : true })
+
     }
   }
 }
@@ -72,7 +80,7 @@ render() {
         <SearchBar setKeywords={this.setKeywords2} onSearch={this.searchIngredient2} />
       </div>
       <div>
-        <CocktailList list={this.state.intersection} errorMessage={this.state.errorMessage}/>
+        <CocktailList list={this.state.intersection} errorShow={this.state.errorShow} errorMessage={this.state.errorMessage} manageError={this.manageError} />
       </div>
       <div>
         <button type="button" onClick={this.fullConsoleLog}>BETA full console log</button>
