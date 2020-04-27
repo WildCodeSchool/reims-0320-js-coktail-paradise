@@ -1,10 +1,10 @@
 import React from 'react';
-import TextInput from './TextInput';
+import Select from './Select';
 import Button from './Button';
 
-const SearchBar = ({ setKeywords, onSearch }) => (
+const SearchBar = ({ onSearch }) => (
   <div className="textInput">
-    <TextInput setText={setKeywords} />
+    <Select />
     <Button onClick={onSearch} />
   </div>
 );
