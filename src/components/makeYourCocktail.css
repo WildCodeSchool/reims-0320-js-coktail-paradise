@@ -16,6 +16,11 @@ body{
     align-items: center;
 }
 
+.errorMessage{
+    font-size: 5rem;
+    display: ;
+}
+
 .cocktailTable {
     display: flex;
     flex-direction: column;

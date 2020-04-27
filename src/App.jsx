@@ -15,6 +15,7 @@ class App extends React.Component {
       cocktails1: [],
       cocktails2: [],
       intersection: [],
+      errorMessage  : 'ERROOOOOOOOOOOOOORS',
     };
   }
 
@@ -22,7 +23,8 @@ setKeywords1 = (keywords1) => this.setState({ keywords1 })
 setKeywords2 = (keywords2) => this.setState({ keywords2 })
 
 searchIngredient1 = () => {
-  Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords1}`)
+  
+  Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords1 !== undefined ? this.state.keywords1 : ''}`)
     .then((response) => response.data)
     .then((data) => {
       this.setState({ cocktails1: data.drinks });
@@ -30,7 +32,8 @@ searchIngredient1 = () => {
 }
 
 searchIngredient2 = () => {
-  Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords2}`)
+  
+  Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords2 !== undefined ? this.state.keywords2 : ''} `)
     .then((response) => response.data)
     .then((data) => {
       this.setState({ cocktails2: data.drinks });
@@ -38,9 +41,24 @@ searchIngredient2 = () => {
 }
 
 compare = () => {
-  this.setState ({ intersection:  this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1)})
+  if (this.state.cocktails1 === undefined || this.state.cocktails2 === undefined) {
+    this.setState ({ errorMessage : 'Il manque un ingrédient' })
+  } else {
+    this.setState ({ intersection: [] });
+    this.setState ({ intersection:  this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1)})
+    if (this.state.intersection.length === 0) {
+      this.setState ({ errorMessage :'aucun cocktail ne contient ces ingrédients'});
+    }
+  }
 }
 
+fullConsoleLog = () => {
+  console.log(this.state.keywords1);
+  console.log(this.state.cocktails1);
+  console.log(this.state.keywords2);
+  console.log(this.state.cocktails2);
+  console.log(this.state.intersection)
+}
 
 render() {
   return (
@@ -54,9 +72,10 @@ render() {
         <SearchBar setKeywords={this.setKeywords2} onSearch={this.searchIngredient2} />
       </div>
       <div>
-        <CocktailList list={this.state.intersection === undefined ? [""] : this.state.intersection} />
+        <CocktailList list={this.state.intersection} errorMessage={this.state.errorMessage}/>
       </div>
       <div>
+        <button type="button" onClick={this.fullConsoleLog}>BETA full console log</button>
         <ButtonShow onClick={this.compare} />
       </div>
     </div>
