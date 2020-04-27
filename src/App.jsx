@@ -2,8 +2,12 @@ import React from 'react';
 import Axios from 'axios';
 import SearchBar from './components/SearchBar';
 import './components/makeYourCocktail.css';
+import './components/Cocktails.css';
 import CocktailList from './components/CocktailList';
 import ButtonShow from './components/ButtonShow';
+import NavBar from './components/NavBar';
+import CocktailResult from './components/CocktailResult';
+import CocktailDescription from './CocktailDescription';
 
 
 class App extends React.Component {
@@ -15,6 +19,8 @@ class App extends React.Component {
       cocktails1: [],
       cocktails2: [],
       intersection: [],
+      showYourCocktails: true,
+      showDescription: true,
     };
   }
 
@@ -41,24 +47,84 @@ compare = () => {
   this.setState ({ intersection:  this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1)})
 }
 
+ShowYourCocktails =() => {
+  this.setState({
+    showYourCocktails: false,
+  })
+}
+
+ShowDescription =() => {
+  this.setState({
+    showDescription: false,
+  })
+}
 
 render() {
   return (
-    <div className="makeYourCocktail">
-      <div className="searchBar">
-        <h2>Ingredient 1</h2>
-        <SearchBar setKeywords={this.setKeywords1} onSearch={this.searchIngredient1} />
-      </div>
-      <div className="searchBar">
-        <h2>Ingredient 2</h2>
-        <SearchBar setKeywords={this.setKeywords2} onSearch={this.searchIngredient2} />
-      </div>
-      <div>
-        <CocktailList list={this.state.intersection === undefined ? [""] : this.state.intersection} />
-      </div>
-      <div>
-        <ButtonShow onClick={this.compare} />
-      </div>
+    <div>
+      {this.state.showYourCocktails 
+      
+        ?
+        
+        <div>
+          <div className="text">
+            <div className="makeYourCocktail">
+              <div className="searchBar">
+                <h2>Ingredient 1</h2>
+                <SearchBar setKeywords={this.setKeywords1} onSearch={this.searchIngredient1} />
+              </div>
+              <div className="searchBar">
+                <h2>Ingredient 2</h2>
+                <SearchBar setKeywords={this.setKeywords2} onSearch={this.searchIngredient2} />
+              </div>
+              <div>
+                <CocktailList list={this.state.intersection === undefined ? [""] : this.state.intersection} />
+              </div>
+              <div>
+                <ButtonShow onClick={this.compare} />
+              </div>
+            </div>
+          </div>
+          <div className="divButtonCocktail">
+            <button className="buttonCocktail" onClick={this.ShowYourCocktails} >
+              Your Cocktails
+            </button>
+          </div>
+        </div>
+
+        :
+        <div>
+          {this.state.showDescription
+
+            ?
+
+            <div>
+              <NavBar />
+              <div className="makeYourCocktail">
+                <h1 className="fontStyle">Your Cocktails</h1>
+                <CocktailResult />
+                <div className="divCocktailShow">
+                  <button className="buttonCocktailShow" onClick={this.ShowDescription}>
+                    Show Your Cocktails
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+
+            :
+
+            <div>
+              <NavBar />
+              <div className="makeYourCocktail">
+                <h1 className="fontStyle">Cocktails Description</h1>
+                <CocktailDescription />
+              </div>
+            </div>
+
+          }
+        </div>
+      }
     </div>
   );
 }

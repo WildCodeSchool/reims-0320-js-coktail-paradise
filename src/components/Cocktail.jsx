@@ -1,5 +1,5 @@
 import React from 'react';
-import './cocltail.css'
+import './Cocktails.css'
 
 
 class Cocktail extends React.Component {

@@ -1,0 +1,47 @@
+h1 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+p{
+    text-align: center;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.DivResult {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border: solid rgb(51, 172, 209) 2px;
+    border-radius: 10px;
+}
+
+.ImageCocktail{
+    width: 40%;
+}
+
+.ResultDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.buttonCliked {
+    background-color: #0B899D;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
+    margin-bottom: 1vh;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: black 2px 5px 8px;
+    border: none;
+    margin : 0.5rem;
+}
