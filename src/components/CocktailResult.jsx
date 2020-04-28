@@ -5,13 +5,15 @@ function CocktailResult() {
 	return (
 		<div className="DivResult">
       <div className="ImageCocktail">
-        <img src="https://picsum.photos/125/125" alt=""/>
+        <img src="https://picsum.photos/120/120" alt="Cocktails"/>
       </div>
       <div className="ResultDescription">
         <h1>MOJITO</h1>
-        <p>Ingredient : Limon, Citrus, Vodka</p>
-        <p>Ingredient : Limon, Citrus, Vodka</p>
-        <button className="buttonCliked">Show Cocktails</button>
+        <div>
+          <p><strong>Ingredients</strong> : Limon, Citrus, Vodka</p>
+          <p><strong>Ingredients</strong> : Limon, Citrus, Vodka</p>
+        </div>
+        <button className="buttonCliked">SHOW RECIPE</button>
       </div>
 		</div>
 	);

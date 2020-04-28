@@ -7,7 +7,7 @@ import CocktailList from './components/CocktailList';
 import ButtonShow from './components/ButtonShow';
 import NavBar from './components/NavBar';
 import CocktailResult from './components/CocktailResult';
-import CocktailDescription from './CocktailDescription';
+import CocktailDescription from './components/CocktailDescription';
 
 
 class App extends React.Component {
@@ -103,6 +103,9 @@ render() {
               <div className="makeYourCocktail">
                 <h1 className="fontStyle">Your Cocktails</h1>
                 <CocktailResult />
+                <CocktailResult />
+                <CocktailResult />
+                <CocktailResult />
                 <div className="divCocktailShow">
                   <button className="buttonCocktailShow" onClick={this.ShowDescription}>
                     Show Your Cocktails
@@ -117,7 +120,6 @@ render() {
             <div>
               <NavBar />
               <div className="makeYourCocktail">
-                <h1 className="fontStyle">Cocktails Description</h1>
                 <CocktailDescription />
               </div>
             </div>

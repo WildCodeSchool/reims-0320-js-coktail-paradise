@@ -5,7 +5,14 @@ function NavBar() {
 	return (
 		<div className='DivNavBar'>
 			<nav className='NavBar'>
-				<h1 className="NavFontStyle">Cocktail Paradise</h1>
+				<div className='NavBarBurger'>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div className='NavBarTitle'>
+					<h1 className="NavFontStyle">Cocktail Paradise</h1>
+				</div>
 			</nav>
 		</div>
 	);

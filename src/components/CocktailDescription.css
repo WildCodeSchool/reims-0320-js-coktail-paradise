@@ -1,42 +1,36 @@
-*{
-    font-family: 'Kalam', cursive;
-}
-
-h1 {
-    font-size: 1rem;
-    margin: 0;
-}
-
 p{
     text-align: center;
     margin: 0;
     font-size: 0.8rem;
 }
 
-.DivResult {
-    width: 90vw;
+ul{
+    margin: 0; 
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.DivDescription{
     display: flex;
     flex-direction: row;
+    width: 90vw;
+    margin: 1rem;
     background-color: white;
-    border: solid #0B899D 2px;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
 }
 
-.ImageCocktail{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
+.TitleCocktail{
+    font-size: 1.5rem;
 }
 
-.ResultDescription{
+.TextDescription {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 40%;
 }
 
 .buttonCliked {
@@ -53,4 +47,12 @@ p{
     box-shadow: black 2px 5px 8px;
     border: none;
     margin : 0.5rem;
+}
+
+.DivRecipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
 }
