@@ -13,58 +13,67 @@ class App extends React.Component {
       ingredientsList: [],
     };
   }
-  
+
   componentDidMount() {
     this.getData();
   }
 
   getData = () => {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    alphabet.split('').forEach((letter) => {
+    const requests = alphabet.split('').map((letter) => (
       Axios.get(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`,
       )
-        .then((response) => response.data)
-        .then((data) => {
-          this.setState({
-            allCocktails: [...this.state.allCocktails, { coktails: data.drinks }],
+    ));
+    Axios.all(requests).then(Axios.spread((...responses) => {
+      let allCocktails = this.state.allCocktails;
+      let ingredientsList = this.state.ingredientsList;
+
+      responses.forEach((response) => {
+        const data = response.data;
+        if (data.drinks !== null) {
+          data.drinks.forEach((drink) => {
+            ingredientsList = [
+              ...ingredientsList,
+              drink.strIngredient1,
+              drink.strIngredient2,
+              drink.strIngredient3,
+              drink.strIngredient4,
+              drink.strIngredient5,
+              drink.strIngredient6,
+              drink.strIngredient7,
+              drink.strIngredient8,
+              drink.strIngredient9,
+              drink.strIngredient10,
+              drink.strIngredient11,
+              drink.strIngredient12,
+              drink.strIngredient13,
+              drink.strIngredient14,
+              drink.strIngredient15,
+            ];
           });
-          if (data.drinks !== null) {
-            for (let i = 0; i < data.drinks.length; i++) {
-              this.setState({
-                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient1],
-              });
-            }
-            for (let i = 0; i < data.drinks.length; i++) {
-              this.setState({
-                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient2],
-              });
-            }
-            for (let i = 0; i < data.drinks.length; i++) {
-              this.setState({
-                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient3],
-              });
-            }
-            for (let i = 0; i < data.drinks.length; i++) {
-              this.setState({
-                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient4],
-              });
-            }
-            for (let i = 0; i < data.drinks.length; i++) {
-              this.setState({
-                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient5],
-              });
-            }
-          }
-        });
-    });
+          ingredientsList = [...new Set(ingredientsList)];
+          ingredientsList = ingredientsList
+            .filter((ingredient) => ingredient != null && ingredient !== '')
+            .map((ingredient) => ingredient[0].toUpperCase() + ingredient.slice(1));
+          ingredientsList.sort();
+        }
+
+        allCocktails = [...allCocktails, { coktails: data.drinks }];
+      });
+
+      this.setState({
+        ingredientsList,
+        allCocktails,
+      });
+    }));
   };
 
   render() {
     return (
       <div className="makeYourCocktail">
         <div className="searchBar">
-          <SearchBar />
+          <SearchBar list={this.state.ingredientsList} />
         </div>
         <div>
           <CocktailList list={this.state.cocktails} />
