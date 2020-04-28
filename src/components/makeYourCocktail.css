@@ -15,6 +15,31 @@ body{
     flex-direction: column;
     align-items: center;
 }
+.errorModalBg{
+    background-color: black;
+    position: absolute;
+
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+.errorMessage{
+    font-size: 3rem;
+    background-color: blue;
+    color: white;
+    position: absolute;
+    top: 10vh;
+    height: 80vh;
+    width: 80vw;
+    z-index: 1;
+    left: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+}
 
 .cocktailTable {
     display: flex;
