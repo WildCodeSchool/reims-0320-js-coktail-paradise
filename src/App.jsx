@@ -10,8 +10,8 @@ class App extends React.Component {
     this.state = {
       cocktails: [],
       allCocktails: [],
+      ingredientsList: [],
     };
-  }
 
   getData = () => {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -22,27 +22,44 @@ class App extends React.Component {
         .then((response) => response.data)
         .then((data) => {
           this.setState({
-            allCocktails: [...this.state.allCocktails, { letter, coktails: data.drinks }],
+            allCocktails: [...this.state.allCocktails, { coktails: data.drinks }],
           });
+          if (data.drinks !== null) {
+            for (let i = 0; i < data.drinks.length; i++) {
+              this.setState({
+                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient1],
+              });
+            }
+            for (let i = 0; i < data.drinks.length; i++) {
+              this.setState({
+                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient2],
+              });
+            }
+            for (let i = 0; i < data.drinks.length; i++) {
+              this.setState({
+                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient3],
+              });
+            }
+            for (let i = 0; i < data.drinks.length; i++) {
+              this.setState({
+                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient4],
+              });
+            }
+            for (let i = 0; i < data.drinks.length; i++) {
+              this.setState({
+                ingredientsList: [...this.state.ingredientsList, data.drinks[i].strIngredient5],
+              });
+            }
+          }
         });
     });
   };
-/*
-  search = () => {
-    Axios.get(
-      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords}`
-    )
-      .then((response) => response.data)
-      .then((data) => {
-        this.setState({ cocktails: data.drinks });
-      });
-  };*/
 
   render() {
     return (
       <div className="makeYourCocktail">
         <div className="searchBar">
-          <SearchBar onSearch={this.getData} />
+          <SearchBar />
         </div>
         <div>
           <CocktailList list={this.state.cocktails} />
