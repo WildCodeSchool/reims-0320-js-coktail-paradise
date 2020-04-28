@@ -122,7 +122,9 @@ body{
 }
 
 .cocktailThumb {
-    width: 90vw;
+    display :flex;
+    
+    width: 25vw;
     border-radius: 20px;
 
 }
