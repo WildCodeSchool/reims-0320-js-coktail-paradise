@@ -12,6 +12,11 @@ class App extends React.Component {
       allCocktails: [],
       ingredientsList: [],
     };
+  }
+  
+  componentDidMount() {
+    this.getData();
+  }
 
   getData = () => {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789';
