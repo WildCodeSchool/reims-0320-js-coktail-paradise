@@ -1,0 +1,53 @@
+.fontStyle{
+    font-family: 'Kalam', cursive;
+    font-size: 3rem;
+    padding: 1.5rem;
+    color: #0B899D;
+}
+
+.divButtonCocktail{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonCocktail {
+    background-color: #0B899D;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
+    margin-bottom: 1vh;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: black 2px 5px 8px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    border: none;
+    margin : 0.5rem;
+}
+
+.divCocktailShow{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonCocktailShow {
+    background-color: #0B899D;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
+    margin-bottom: 1vh;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: black 2px 5px 8px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    border: none;
+    margin : 0.5rem;
+}
+

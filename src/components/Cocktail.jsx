@@ -1,6 +1,8 @@
 import React from 'react';
+import './Cocktails.css'
 import './makeYourCocktail.css';
 import Axios from 'axios';
+
 class Cocktail extends React.Component {
   constructor(props) {
     super(props);

@@ -9,7 +9,7 @@ body{
 }
 
 .makeYourCocktail {
-    height: 100vh;
+    /* height: 100vh; */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
