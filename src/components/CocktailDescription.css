@@ -1,0 +1,58 @@
+p{
+    text-align: center;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+ul{
+    margin: 0; 
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.DivDescription{
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    margin: 1rem;
+    background-color: white;
+}
+
+.TitleCocktail{
+    font-size: 1.5rem;
+}
+
+.TextDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.buttonCliked {
+    background-color: #0B899D;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
+    margin-bottom: 1vh;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: black 2px 5px 8px;
+    border: none;
+    margin : 0.5rem;
+}
+
+.DivRecipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+}

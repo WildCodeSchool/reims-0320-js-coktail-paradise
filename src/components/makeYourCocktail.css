@@ -1,5 +1,6 @@
 body{
     background-color: #e4dabe;
+    
 }
 
 .searchBar{
@@ -8,21 +9,74 @@ body{
 }
 
 .makeYourCocktail {
-    height: 100vh;
+    /* height: 100vh; */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+.errorModalBg{
+    background-color: black;
+    position: absolute;
 
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+.errorMessage{
+    font-size: 3rem;
+    background-color: blue;
+    color: white;
+    position: absolute;
+    top: 10vh;
+    height: 80vh;
+    width: 80vw;
+    z-index: 1;
+    left: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.cocktailTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw;
+}
 
 .classCocktail {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    
 }
 
+.butonCliked {
+    background-color: #0B899D;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
+    margin-bottom: 1vh;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    padding: .3rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: black 2px 5px 8px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    border: none;
+    margin : 0.5rem;
+    width: 70vw;
+}
 .cocktails {
     background-color: #0B899D;
     font-family: 'Kalam', cursive;
@@ -37,31 +91,40 @@ body{
     width: fit-content;
     box-shadow: black 2px 5px 8px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: none;
-}
-.cocktailsClicked {
-    background-color: white;
-    font-family: 'Kalam', cursive;
-    text-shadow: black 1px 1px 0px;
-    margin-bottom: 1vh;
-    list-style-type: none;
-    color: white;
-    padding: .3rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    box-shadow: black 2px 5px 8px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    width: fit-content;
+    margin : 0.5rem;
 }
 
-.cocktailDescriptionOff {
+   
+
+
+.hideDescription {
     display: none;
+    text-align: center;
+}
+.showDescription {
+    display: inline;
     text-align: center;
 }
 
 .cocktailDescriptionOn {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+ 
+    
+    
+
+}
+
+.cocktailThumb {
+    display :flex;
+    
+    width: 25vw;
+    border-radius: 20px;
+
 }
