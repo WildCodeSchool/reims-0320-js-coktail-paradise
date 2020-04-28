@@ -86,7 +86,7 @@ render() {
             </div>
           </div>
           <div className="divButtonCocktail">
-            <button className="buttonCocktail" onClick={this.ShowYourCocktails} >
+            <button className="buttonCocktail" onClick={this.showYourCocktails} >
               Your Cocktails
             </button>
           </div>
@@ -107,7 +107,7 @@ render() {
                 <CocktailResult />
                 <CocktailResult />
                 <div className="divCocktailShow">
-                  <button className="buttonCocktailShow" onClick={this.ShowDescription}>
+                  <button className="buttonCocktailShow" onClick={this.showDescription}>
                     Show Your Cocktails
                   </button>
                 </div>
