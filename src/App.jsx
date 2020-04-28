@@ -47,13 +47,13 @@ compare = () => {
   this.setState ({ intersection:  this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1)})
 }
 
-ShowYourCocktails =() => {
+showYourCocktails =() => {
   this.setState({
     showYourCocktails: false,
   })
 }
 
-ShowDescription =() => {
+showDescription =() => {
   this.setState({
     showDescription: false,
   })
