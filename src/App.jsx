@@ -60,13 +60,6 @@ compare = () => {
   }
 }
 
-fullConsoleLog = () => {
-  console.log(this.state.keywords1);
-  console.log(this.state.cocktails1);
-  console.log(this.state.keywords2);
-  console.log(this.state.cocktails2);
-  console.log(this.state.intersection)
-}
 
 render() {
   return (
@@ -83,7 +76,6 @@ render() {
         <CocktailList list={this.state.intersection} errorShow={this.state.errorShow} errorMessage={this.state.errorMessage} manageError={this.manageError} />
       </div>
       <div>
-        <button type="button" onClick={this.fullConsoleLog}>BETA full console log</button>
         <ButtonShow onClick={this.compare} />
       </div>
     </div>
