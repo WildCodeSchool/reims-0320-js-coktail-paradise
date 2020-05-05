@@ -24,21 +24,26 @@ class Cocktail extends React.Component {
     Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.cocktail.idDrink}`)
       .then((response) => response.data)
       .then((data) => {
-        this.setState({ cocktailDescription: data.drinks[0].strInstructions });
+        this.setState({ cocktailDescription: data.drinks[0]});
       });
   }
 
   render() {
     return (
-      <div className={this.state.clicked? 'cocktailDescriptionOn' : ''}>
-        <button type="button" onClick={this.clicked} className={this.state.clicked? 'butonCliked' : 'cocktails'}>
-          {this.props.cocktail.strDrink}
-        </button>
-        <div className={this.state.clicked? 'showDescriptionOn' : 'hideDescription'}>
+      <div className='cocktailGlobal'>
+        <img className="cocktailThumb" src={this.state.cocktailDescription.strDrinkThumb} alt={this.state.cocktailDescription.strDrink} />
+        <div>
+          <p>{this.state.cocktailDescription.strInstructions}</p>
+          
           <div>
-            <h1>  {this.state.cocktailDescription} </h1>
-            <img className="cocktailThumb" src={this.props.cocktail.strDrinkThumb} alt={this.props.cocktail.strDrink} />
+          {this.state.cocktailDescription.strDrink}
+          <p>{this.state.cocktailDescription.strIngredient1}</p>
+          <p>{this.state.cocktailDescription.strIngredient2}</p>
+          <p>{this.state.cocktailDescription.strIngredient3}</p>
+          <p>{this.state.cocktailDescription.strIngredient4}</p>
+          <p>{this.state.cocktailDescription.strIngredient5}</p>
           </div>
+          <button type='button' onClick={() => this.props.clicked()}>Close</button>
         </div>
       </div>
     );

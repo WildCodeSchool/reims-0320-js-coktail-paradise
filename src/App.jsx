@@ -10,6 +10,8 @@ import CocktailResult from './components/CocktailResult';
 import CocktailDescription from './components/CocktailDescription';
 
 
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -162,11 +164,6 @@ class App extends React.Component {
                 <ButtonShow onClick={this.compare} />
               </div>
             </div>
-          </div>
-          <div className="divButtonCocktail">
-            <button className="buttonCocktail" onClick={this.showYourCocktails} >
-              Your Cocktails
-            </button>
           </div>
         </div>
       </div>
