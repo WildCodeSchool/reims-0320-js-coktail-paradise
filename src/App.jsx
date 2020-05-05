@@ -5,6 +5,7 @@ import './components/makeYourCocktail.css';
 import './components/Cocktails.css';
 import CocktailList from './components/CocktailList';
 import ButtonShow from './components/ButtonShow';
+import Home from './components/Home';
 import NavBar from './components/NavBar';
 import CocktailResult from './components/CocktailResult';
 import CocktailDescription from './components/CocktailDescription';
@@ -47,11 +48,11 @@ class App extends React.Component {
   setKeywords2 = (keywords2) => this.setState({ keywords2 });
 
   manageError = () => {
-    this.setState({ errorShow : !this.state.errorShow });
+    this.setState({ errorShow: !this.state.errorShow });
   }
 
   searchIngredient1 = () => {
-    const keywords1 = this.state.keywords1
+    const { keywords1 } = this.state;
     Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${keywords1 !== undefined ? keywords1 : ''}`)
       .then((response) => response.data)
       .then((data) => {
@@ -60,7 +61,7 @@ class App extends React.Component {
   }
 
   searchIngredient2 = () => {
-    const keywords2 = this.state.keywords2
+    const { keywords2 } = this.state;
     Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${keywords2 !== undefined ? keywords2 : ''} `)
       .then((response) => response.data)
       .then((data) => {
@@ -73,7 +74,7 @@ class App extends React.Component {
       this.setState({ errorMessage: 'Il manque un ingrédient' });
       this.setState({ errorShow: true });
     } else {
-      const intersection = this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1);
+      const intersection = this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex((cocktail2) => cocktail1.strDrink === cocktail2.strDrink) !== -1);
       this.setState({ intersection });
       if (intersection.length === 0) {
         this.setState({ errorMessage: 'aucun cocktail ne contient ces ingrédients' });
@@ -87,7 +88,7 @@ class App extends React.Component {
       showYourCocktails: false,
     });
   }
-  
+
   showDescription =() => {
     this.setState({
       showDescription: false,
@@ -102,11 +103,11 @@ class App extends React.Component {
       )
     ));
     Axios.all(requests).then(Axios.spread((...responses) => {
-      let allCocktails = this.state.allCocktails;
-      let ingredientsList = this.state.ingredientsList;
+      let { allCocktails } = this.state;
+      let { ingredientsList } = this.state;
 
       responses.forEach((response) => {
-        const data = response.data;
+        const { data } = response;
         if (data.drinks !== null) {
           data.drinks.forEach((drink) => {
             ingredientsList = [
@@ -149,14 +150,17 @@ class App extends React.Component {
     return (
       <div>
         <div>
+          <Home />
+        </div>
+        <div>
           <div className="text">
             <div className="makeYourCocktail">
               <div className="searchBar">
                 <h2>Yours ingredients !</h2>
-                <Select setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} list={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2}/>
+                <Select setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} list={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
               </div>
               <div>
-                <CocktailList list={this.state.intersection === undefined ? [""] : this.state.intersection} />
+                <CocktailList list={this.state.intersection === undefined ? [''] : this.state.intersection} />
               </div>
               <div>
                 <ButtonShow onClick={this.compare} />
@@ -164,7 +168,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="divButtonCocktail">
-            <button className="buttonCocktail" onClick={this.showYourCocktails} >
+            <button type="submit" className="buttonCocktail" onClick={this.showYourCocktails}>
               Your Cocktails
             </button>
           </div>
