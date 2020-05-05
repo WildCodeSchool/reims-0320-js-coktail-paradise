@@ -6,7 +6,6 @@ import './components/Cocktails.css';
 import CocktailList from './components/CocktailList';
 import ButtonShow from './components/ButtonShow';
 import NavBar from './components/NavBar';
-import CocktailResult from './components/CocktailResult';
 import CocktailDescription from './components/CocktailDescription';
 
 

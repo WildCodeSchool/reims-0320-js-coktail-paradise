@@ -1,5 +1,6 @@
 import React from 'react';
 import Cocktail from './Cocktail';
+import CocktailPrev from './CocktailPrev';
 
 
 function CocktailList({ list, errorMessage, errorShow, manageError }) {
@@ -10,7 +11,7 @@ function CocktailList({ list, errorMessage, errorShow, manageError }) {
         <button type="button" onClick={manageError}>ok</button>
       </div>
       <div className="cocktailList">
-        { list.map((cocktail) => <Cocktail cocktail={cocktail} />) }
+        { list.map((cocktail) => <CocktailPrev cocktail={cocktail} />) }
       </div>
     </div>
     

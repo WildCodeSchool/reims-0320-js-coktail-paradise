@@ -2,6 +2,14 @@
     font-family: 'Kalam', cursive;
 }
 
+.hiddend {
+    display: none;
+}
+
+.show {
+    display: inline;
+}
+
 h1 {
     font-size: 1rem;
     margin: 0;
