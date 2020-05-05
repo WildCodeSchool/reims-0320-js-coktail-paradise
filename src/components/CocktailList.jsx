@@ -9,7 +9,7 @@ function CocktailList({ list, errorMessage, errorShow, manageError }) {
         error message {errorMessage}
         <button type="button" onClick={manageError}>ok</button>
       </div>
-      <div className="cocktailList">
+      <div>
         { list.map((cocktail) => <CocktailPrev cocktail={cocktail} />) }
       </div>
     </div>

@@ -13,12 +13,19 @@ li {
     list-style: none;
 }
 
-.DivDescription{
+.modalDisplay{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.DivDescription {
     display: flex;
     flex-direction: row;
-    width: 90vw;
-    margin: 1rem;
-    background-color: white;
+
 }
 
 .TitleCocktail{
@@ -55,4 +62,10 @@ li {
     justify-content: center;
     align-items: center;
     width: 90vw;
+}
+
+.cocktailThumb {
+    display :flex;
+    width: 25vw;
+    border-radius: 20px;
 }

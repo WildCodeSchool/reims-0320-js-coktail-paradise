@@ -1,6 +1,7 @@
 import React from 'react';
 import './Cocktails.css'
 import './makeYourCocktail.css';
+import './CocktailResult.css';
 import Axios from 'axios';
 import Cocktail from './Cocktail';
 
@@ -23,12 +24,14 @@ class CocktailPrev extends React.Component {
 
   render() {
     return (
-      <div>
-        <img className="cocktailThumb" src={this.props.cocktail.strDrinkThumb} alt={this.props.cocktail.strDrink} />
+      <div className='DivResult'>
         <div>
-            {this.props.cocktail.strDrink}
+          <img className='ImageCocktail' src={this.props.cocktail.strDrinkThumb} alt={this.props.cocktail.strDrink} />
         </div>
-        <button type="button" onClick={this.clicked}>Show Cocktail description</button>
+        <div className="ResultDescription">
+          <h1>{this.props.cocktail.strDrink}</h1>
+          <button className='buttonCliked' type="button" onClick={this.clicked}>Show Cocktail description</button>
+        </div>
         <div className={this.state.clicked === true ? 'modaleON' : 'modaleOFF'}>
             <Cocktail clicked={this.clicked} cocktail={this.props.cocktail}/> 
         </div>
