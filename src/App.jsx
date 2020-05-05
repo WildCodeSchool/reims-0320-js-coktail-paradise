@@ -43,6 +43,7 @@ class App extends React.Component {
   }
 
   setKeywords1 = (keywords1) => this.setState({ keywords1 });
+
   setKeywords2 = (keywords2) => this.setState({ keywords2 });
 
   manageError = () => {
