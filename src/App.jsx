@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import SearchBar from './components/SearchBar';
+import Select from './components/Select';
 import './components/makeYourCocktail.css';
 import './components/Cocktails.css';
 import CocktailList from './components/CocktailList';
@@ -33,6 +33,15 @@ class App extends React.Component {
     this.getData();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.keywords1 !== prevState.keywords1) {
+      this.searchIngredient1();
+    }
+    if (this.state.keywords2 !== prevState.keywords2) {
+      this.searchIngredient2();
+    }
+  }
+
   setKeywords1 = (keywords1) => this.setState({ keywords1 });
   setKeywords2 = (keywords2) => this.setState({ keywords2 });
 
@@ -41,17 +50,17 @@ class App extends React.Component {
   }
 
   searchIngredient1 = () => {
-  
-    Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords1 !== undefined ? this.state.keywords1 : ''}`)
+    const keywords1 = this.state.keywords1
+    Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${keywords1 !== undefined ? keywords1 : ''}`)
       .then((response) => response.data)
       .then((data) => {
         this.setState({ cocktails1: data.drinks });
       });
   }
-  
+
   searchIngredient2 = () => {
-    
-    Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.keywords2 !== undefined ? this.state.keywords2 : ''} `)
+    const keywords2 = this.state.keywords2
+    Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${keywords2 !== undefined ? keywords2 : ''} `)
       .then((response) => response.data)
       .then((data) => {
         this.setState({ cocktails2: data.drinks });
@@ -142,8 +151,8 @@ class App extends React.Component {
           <div className="text">
             <div className="makeYourCocktail">
               <div className="searchBar">
-                <h2>Ingredient 1</h2>
-                <SearchBar setKeywords1={this.setKeywords1}  setKeywords2={this.setKeywords2}  onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2}  list={this.state.ingredientsList} />
+                <h2>Yours ingredients !</h2>
+                <Select setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} list={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2}/>
               </div>
               <div>
                 <CocktailList list={this.state.intersection === undefined ? [""] : this.state.intersection} />
