@@ -60,15 +60,14 @@ class App extends React.Component {
 
   compare = () => {
     if (this.state.cocktails1 === undefined || this.state.cocktails2 === undefined) {
-      this.setState ({ errorMessage : 'Il manque un ingrédient' })
-      this.setState ({ errorShow : true })
+      this.setState({ errorMessage: 'Il manque un ingrédient' });
+      this.setState({ errorShow: true });
     } else {
-      this.setState ({ intersection: [] });
-      this.setState ({ intersection:  this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1)})
-      if (this.state.intersection.length === 0) {
-        this.setState ({ errorMessage :'aucun cocktail ne contient ces ingrédients'});
-        this.setState ({ errorShow : true })
-  
+      const intersection = this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex(cocktail2 => cocktail1.strDrink === cocktail2.strDrink) !== -1);
+      this.setState({ intersection });
+      if (intersection.length === 0) {
+        this.setState({ errorMessage: 'aucun cocktail ne contient ces ingrédients' });
+        this.setState({ errorShow: true });
       }
     }
   }
@@ -76,13 +75,13 @@ class App extends React.Component {
   showYourCocktails =() => {
     this.setState({
       showYourCocktails: false,
-    })
+    });
   }
   
   showDescription =() => {
     this.setState({
       showDescription: false,
-    })
+    });
   }
 
   getData = () => {
