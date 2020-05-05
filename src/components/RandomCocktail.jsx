@@ -5,8 +5,7 @@ class RandomCocktail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    randomCocktail: "",
-    
+      randomCocktail: '',
     };
   }
 
@@ -24,8 +23,9 @@ class RandomCocktail extends React.Component {
         <div className="randomCoctail">
           <h1> Your Random Cocktail </h1>
           <div>
-            <img src={this.state.randomCoktail.strDrinkThumb} 
-              alt={this.state.randomCocktail.strDrink} />
+            <img src={this.state.randomCoktail.strDrinkThumb}
+              alt={this.state.randomCocktail.strDrink}
+            />
           </div>
           <h2>{this.state.randomCocktail.strDrink}</h2>
           <div>
