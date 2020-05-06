@@ -5,15 +5,19 @@ class RandomCocktail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      randomCocktail: '',
+      randomCocktail: [],
     };
   }
 
   componentDidMount() {
+    this.searchRandomCocktail();
+  }
+
+  searchRandomCocktail = () =>{
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
       .then((response) => response.data)
       .then((data) => {
-        this.setState({ randomCocktailName: data.drinks[0]});
+        this.setState({ randomCocktailName: data.drinks[0] });
       });
   }
 
@@ -42,6 +46,7 @@ class RandomCocktail extends React.Component {
             <h3> Instructions </h3>
             <p> {this.state.randomCocktail.strInstructions} </p>
           </div>
+          <button type="button" onClick={this.searchRandomCocktail}>new random cocktail</button>
         </div>
       </div>
     );
