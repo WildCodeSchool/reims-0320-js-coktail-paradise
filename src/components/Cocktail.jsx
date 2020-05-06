@@ -32,24 +32,32 @@ class Cocktail extends React.Component {
   render() {
     return (
       <div className='modalDisplay'>
-        <div className='DivDescription'>
-          <div>
-            <img className="cocktailThumb" src={this.state.cocktailDescription.strDrinkThumb} alt={this.state.cocktailDescription.strDrink} />
+        <div className='ContainersCocktails'>
+          <div className='ImageAndIngredients'>
+            <div>
+              <img className="cocktailThumb" src={this.state.cocktailDescription.strDrinkThumb} alt={this.state.cocktailDescription.strDrink} />
+            </div>
+            <div className='TextDescription'>
+              <h1>{this.state.cocktailDescription.strDrink}</h1>
+              <h2>Ingredients :</h2>
+              <ul>
+                <li>{this.state.cocktailDescription.strIngredient1}</li>
+                <li>{this.state.cocktailDescription.strIngredient2}</li>
+                <li>{this.state.cocktailDescription.strIngredient3}</li>
+                <li>{this.state.cocktailDescription.strIngredient4}</li>
+                <li>{this.state.cocktailDescription.strIngredient5}</li>
+              </ul>
+            </div>
           </div>
-          <div className='TextDescription'>
-            {this.state.cocktailDescription.strDrink}
-            <p>Ingredients</p>
-            <p>{this.state.cocktailDescription.strIngredient1}</p>
-            <p>{this.state.cocktailDescription.strIngredient2}</p>
-            <p>{this.state.cocktailDescription.strIngredient3}</p>
-            <p>{this.state.cocktailDescription.strIngredient4}</p>
-            <p>{this.state.cocktailDescription.strIngredient5}</p>
-            <p>{this.state.cocktailDescription.strInstructions}</p>
+          <div className='RecipeAndButton'>
+            <div className='DivRecipe'>
+              <h2>Recipe :</h2>
+              <p>{this.state.cocktailDescription.strInstructions}</p>
+            </div>
+            <div className='DivBackButton'>
+              <button className='buttonClikedBack' type='button' onClick={() => this.props.clicked()}>Return</button>
+            </div>
           </div>
-          <div>
-            <button type='button' onClick={() => this.props.clicked()}>Close</button>
-          </div>
-
         </div>
       </div>
     );

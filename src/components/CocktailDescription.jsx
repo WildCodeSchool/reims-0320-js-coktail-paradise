@@ -5,7 +5,7 @@ function CocktailDescription() {
 	return (
 		<div>
 			<div className='DivDescription'>
-				<div className='ImageDescription'>
+				<div>
 					<img src="https://picsum.photos/170/220" alt="" />
 				</div>
 				<div className='TextDescription'>
