@@ -9,9 +9,6 @@ import NavBar from './components/NavBar';
 import CocktailResult from './components/CocktailResult';
 import CocktailDescription from './components/CocktailDescription';
 
-
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);

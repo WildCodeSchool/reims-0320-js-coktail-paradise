@@ -5,7 +5,7 @@ import './CocktailResult.css';
 import Axios from 'axios';
 import Cocktail from './Cocktail';
 
-class CocktailPrev extends React.Component {
+class CocktailPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,4 +40,4 @@ class CocktailPrev extends React.Component {
   }
 }
 
-export default CocktailPrev;
+export default CocktailPreview;
