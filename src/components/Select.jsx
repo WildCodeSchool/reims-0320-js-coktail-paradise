@@ -15,6 +15,7 @@ class Select extends React.Component {
     return(
       <div>
       <div>
+        <p>Ingredient 1</p>
         <label htmlFor="ingredient-select" />
         <select name="ingredients1" id="ingredient1-select" onChange={(event) => this.seachInput1(event)}>
           <option value="">--Please choose your ingredient</option>
@@ -22,6 +23,7 @@ class Select extends React.Component {
         </select>
       </div>
       <div>
+      <p>Ingredient 2</p>
         <label htmlFor="ingredient-select" />
         <select name="ingredients2" id="ingredient2-select" onChange={(event) => this.seachInput2(event)}>
           <option value="">--Please choose your ingredient</option>

@@ -1,6 +1,5 @@
 body{
     background-color: #e4dabe;
-    
 }
 
 .searchBar{
@@ -118,13 +117,5 @@ body{
  
     
     
-
-}
-
-.cocktailThumb {
-    display :flex;
-    
-    width: 25vw;
-    border-radius: 20px;
 
 }

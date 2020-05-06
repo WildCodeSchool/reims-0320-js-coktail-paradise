@@ -1,7 +1,8 @@
 import React from 'react';
+import "./CocktailResult.css";
 
 const ButtonShow = ({ onClick }) => (
-  <button onClick={onClick} type="button">
+  <button className='buttonCliked' onClick={onClick} type="button">
     Show me cocktails!
   </button>
 );
