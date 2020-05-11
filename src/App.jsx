@@ -9,6 +9,8 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import CocktailResult from './components/CocktailResult';
 import CocktailDescription from './components/CocktailDescription';
+import PopupAge from './components/PopupAge';
+import './components/popupAge.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,11 +28,13 @@ class App extends React.Component {
       showDescription: true,
       errorMessage: 'ERROOOOOOOOOOOOOORS',
       errorShow: false,
+      showPopup : false,
     };
   }
 
   componentDidMount() {
     this.getData();
+    this.togglePopup();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -145,10 +149,21 @@ class App extends React.Component {
     }));
   };
 
+  togglePopup = () => {
+    this.setState({ showPopup: !this.state.showPopup });
+  }
+
+  exitSite = () => {
+    alert('Goodbye');
+  }
+
   render() {
     const cocktailNumber = this.state.intersection.length;
     return (
       <div>
+        <div>
+          {this.state.showPopup ? <PopupAge closePopupEnter={this.togglePopup} closePopupExit={this.exitSite} /> : null }
+        </div>
         <Home />
         <div>
           <div className="text">
