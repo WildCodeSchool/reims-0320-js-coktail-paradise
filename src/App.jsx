@@ -9,6 +9,8 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import CocktailResult from './components/CocktailResult';
 import CocktailDescription from './components/CocktailDescription';
+import RandomButton from './components/RandomButton';
+import RandomCocktail from './components/RandomCocktail';
 
 class App extends React.Component {
   constructor(props) {
@@ -150,6 +152,7 @@ class App extends React.Component {
       <div>
         <Home />
         <div>
+          <RandomCocktail />
           <div className="text">
             <div className="makeYourCocktail">
               <div className="searchBar">
