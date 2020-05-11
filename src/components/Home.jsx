@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.css';
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -11,8 +12,12 @@ function Home() {
         What do you want today?
       </div>
       <div className="buttonsDiv">
-        <button className="button"> Choose your Cocktail </button>
-        <button className="button"> Make your Cocktail </button>
+        <Link className="button" to="/cocktails">
+          Choose your Cocktail
+        </Link>
+        <Link className="button" to="/cocktails/create">
+          Make your Cocktail
+        </Link>
       </div>
       <footer>
         <a href="https://www.wildcodeschool.com/fr-FR">Wild Code School</a>

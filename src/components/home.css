@@ -30,6 +30,9 @@
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 10rem;
   height: 10rem;
   background: #34CFD2;
@@ -56,4 +59,12 @@ footer a {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
 }

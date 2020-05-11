@@ -2,14 +2,14 @@
     font-family: 'Kalam', cursive;
 }
 
-h1 {
+.titlePreview {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin: 0;
     padding: 0.5rem;
 }
 
-p{
+.textPreview{
     text-align: center;
     margin: 0;
     font-size: 0.8rem;
@@ -46,7 +46,7 @@ p{
 .ResultDescription{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 60%;
 }
