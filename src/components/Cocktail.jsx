@@ -21,6 +21,8 @@ class Cocktail extends React.Component {
     this.setState({ clicked: !this.state.clicked });
   }
 
+
+
   description = () => {
     Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.cocktail.idDrink}`)
       .then((response) => response.data)
