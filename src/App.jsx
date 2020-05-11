@@ -135,7 +135,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/*<Home />*/}
         <div>
           <div className="text">
             <div className="makeYourCocktail">
