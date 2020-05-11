@@ -148,6 +148,7 @@ class App extends React.Component {
   };
 
   render() {
+    const cocktailNumber = this.state.intersection.length;
     return (
       <div>
         <Home />
@@ -160,10 +161,11 @@ class App extends React.Component {
                 <Select setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} list={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
               </div>
               <div>
-                <CocktailList list={this.state.intersection === undefined ? [''] : this.state.intersection} />
+                <ButtonShow onClick={this.compare} />
               </div>
               <div>
-                <ButtonShow onClick={this.compare} />
+                <p>Number of cocktails: {cocktailNumber} </p>
+                <CocktailList list={this.state.intersection === undefined ? [''] : this.state.intersection} />
               </div>
             </div>
           </div>
