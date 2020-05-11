@@ -18,48 +18,26 @@ class Select extends React.Component {
   ingredient2Loading = (ingredient1) => {
     let listeIngredients2 = [];
     let cocktailListSort = [];
-    this.props.cocktailsList.map((cocktailByLeters) => {
-      if (cocktailByLeters.coktails != null) {
-        cocktailByLeters.coktails.map((cocktail) => {
-          if (Object.values(cocktail).includes(ingredient1)) {
-            cocktailListSort = [...cocktailListSort, cocktail];
-            if (cocktail.strIngredient1 !== null) {
-              listeIngredients2 = [...listeIngredients2, cocktail.strIngredient1];
-              /*console.log(cocktail.strIngredient1);*/
-              if (cocktail.strIngredient2 !== null) {
-                listeIngredients2 = [...listeIngredients2, cocktail.strIngredient2];
-                /*console.log(cocktail.strIngredient2);*/
-                if (cocktail.strIngredient3 !== null) {
-                  listeIngredients2 = [...listeIngredients2, cocktail.strIngredient3];
-                  /*console.log(cocktail.strIngredient3);*/
-                  if (cocktail.strIngredient4 !== null) {
-                    listeIngredients2 = [...listeIngredients2, cocktail.strIngredient4];
-                    /*console.log(cocktail.strIngredient4);*/
-                    if (cocktail.strIngredient5 !== null) {
-                      listeIngredients2 = [...listeIngredients2, cocktail.strIngredient5];
-                      /*console.log(cocktail.strIngredient5);*/
-                      if (cocktail.strIngredient6 !== null) {
-                        listeIngredients2 = [...listeIngredients2, cocktail.strIngredient6];
-                        /*console.log(cocktail.strIngredient6);*/
-                        if (cocktail.strIngredient7 !== null) {
-                          listeIngredients2 = [...listeIngredients2, cocktail.strIngredient7];
-                          /*console.log(cocktail.strIngredient7);*/
-                          if (cocktail.strIngredient8 !== null) {
-                            listeIngredients2 = [...listeIngredients2, cocktail.strIngredient8];
-                            /*console.log(cocktail.strIngredient8);*/
-                          }
-                        }
-                      }
-                    }
 
-                  }}}}
-          /*console.log('--------------');*/
-        }});
+    const nonNullCoktails = this.props.cocktailsList.filter(
+      (cocktailByLetters) => cocktailByLetters.coktails != null,
+    );
+    nonNullCoktails.forEach((cocktailByLetters) => {
+      cocktailListSort.push(
+        ...cocktailByLetters.coktails.filter((cocktail) => Object.values(cocktail).includes(ingredient1)),
+      );
+    });
+
+    cocktailListSort.forEach((cocktail) => {
+      for (let i = 1; i <= 15; i++) {
+        if (cocktail[`strIngredient${i}`] != null) {
+          listeIngredients2 = [...listeIngredients2, cocktail[`strIngredient${i}`]];
+        }
       }
     });
     listeIngredients2 = [...new Set(listeIngredients2)];
-    this.setState({ listeIngredients2 });
-    this.setState({ cocktailListSort })
+
+    this.setState({ listeIngredients2, cocktailListSort });
   }
 
   seachInput2 = (event) => {
