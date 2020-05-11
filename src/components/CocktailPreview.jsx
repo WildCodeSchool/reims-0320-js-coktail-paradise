@@ -14,13 +14,9 @@ class CocktailPreview extends React.Component {
     };
   }
 
-  
-
   clicked = () => {
     this.setState({ clicked: !this.state.clicked });
   }
-
-  
 
   render() {
     return (
@@ -32,9 +28,7 @@ class CocktailPreview extends React.Component {
           <h1>{this.props.cocktail.strDrink}</h1>
           <button className='buttonCliked' type="button" onClick={this.clicked}>Show Cocktail description</button>
         </div>
-        <div className={this.state.clicked === true ? 'modaleON' : 'modaleOFF'}>
-            <Cocktail clicked={this.clicked} cocktail={this.props.cocktail}/> 
-        </div>
+        {this.state.clicked && <Cocktail clicked={this.clicked} cocktail={this.props.cocktail} />}
       </div>
     );
   }

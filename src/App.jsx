@@ -46,9 +46,6 @@ class App extends React.Component {
 
   setKeywords2 = (keywords2) => this.setState({ keywords2 });
 
-  manageError = () => {
-    this.setState({ errorShow: !this.state.errorShow });
-  }
 
   searchIngredient1 = () => {
     const { keywords1 } = this.state;
@@ -66,20 +63,6 @@ class App extends React.Component {
       .then((data) => {
         this.setState({ cocktails2: data.drinks });
       });
-  }
-
-  compare = () => {
-    if (this.state.cocktails1 === undefined || this.state.cocktails2 === undefined) {
-      this.setState({ errorMessage: 'Il manque un ingrédient' });
-      this.setState({ errorShow: true });
-    } else {
-      const intersection = this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex((cocktail2) => cocktail1.strDrink === cocktail2.strDrink) !== -1);
-      this.setState({ intersection });
-      if (intersection.length === 0) {
-        this.setState({ errorMessage: 'aucun cocktail ne contient ces ingrédients' });
-        this.setState({ errorShow: true });
-      }
-    }
   }
 
   showYourCocktails =() => {
@@ -145,17 +128,20 @@ class App extends React.Component {
     }));
   };
 
+  cocktailListSort = (cocktail) => {
+    this.setState({ intersection: cocktail });
+  }
+
   render() {
     const cocktailNumber = this.state.intersection.length;
     return (
       <div>
-        <Home />
         <div>
           <div className="text">
             <div className="makeYourCocktail">
               <div className="searchBar">
                 <h2>Yours ingredients !</h2>
-                <Select setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} list={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
+                <Select cocktailListSort={this.cocktailListSort} setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} cocktailsList={this.state.allCocktails} ingredientsList={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
               </div>
               <div>
                 <ButtonShow onClick={this.compare} />

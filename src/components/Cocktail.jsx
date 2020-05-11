@@ -8,17 +8,12 @@ class Cocktail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false,
       cocktailDescription: '',
     };
   }
 
   componentDidMount() {
     this.description();
-  }
-
-  clicked = () => {
-    this.setState({ clicked: !this.state.clicked });
   }
 
   description = () => {
