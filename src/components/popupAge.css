@@ -1,0 +1,48 @@
+.popup {  
+  position: fixed;  
+  width: 100vw;
+  height: 100vh;
+  margin: auto;  
+  background-color: rgba(0,0,0, 0.5);  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {  
+  position: absolute;  
+  width: 80vw;
+  height: auto;
+  margin: auto;  
+  border-radius: 10px;  
+  background: white;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.modal-button {
+  background: #0B899D;
+  border-radius: 13px;
+  padding: 1rem;
+  color: white;
+  font-family: 'Tribeca', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  width: 8rem;
+  height: auto;
+  margin: 0.4rem;
+}
+
+.popup-content p {
+  padding: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+}
