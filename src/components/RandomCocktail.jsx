@@ -10,14 +10,10 @@ class RandomCocktail extends React.Component {
   }
 
   componentDidMount() {
-    this.searchRandomCocktail();
-  }
-
-  searchRandomCocktail = () => {
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
       .then((response) => response.data)
       .then((data) => {
-        this.setState({ randomCocktailName: data.drinks[0] });
+        this.setState({ randomCocktail: data.drinks[0] });
       });
   }
 
@@ -27,7 +23,7 @@ class RandomCocktail extends React.Component {
         <div className="randomCoctail">
           <h1> Your Random Cocktail </h1>
           <div>
-            <img src={this.state.randomCoktail.strDrinkThumb}
+            <img src={this.state.randomCocktail.strDrinkThumb}
               alt={this.state.randomCocktail.strDrink}
             />
           </div>
