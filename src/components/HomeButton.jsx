@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Button = ({ onClick }) => (
+const HomeButton = ({ onClick }) => (
   <button onClick={onClick} type="button">
-    Search
+    Home
   </button>
 );
 
-export default Button;
+export default HomeButton;

@@ -2,8 +2,10 @@ import React from 'react';
 import Axios from 'axios';
 import Select from './Select';
 import CocktailList from './CocktailList';
-import ButtonShow from './ButtonShow';
+import HomeButton from './HomeButton.jsx';
+import { Link } from "react-router-dom";
 import './makeYourCocktail.css';
+import './home.css';
 
 class MakeYourCocktail extends React.Component {
   constructor(props) {
@@ -143,13 +145,13 @@ class MakeYourCocktail extends React.Component {
   render() {
     return (
       <div className="BackCockChoice">
+        <Link className="homeButton" to="/">
+          X
+        </Link>
         <div className="makeYourCocktail">
           <div className="searchBar">
             <h2>Yours ingredients !</h2>
             <Select setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} list={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
-          </div>
-          <div>
-            <ButtonShow onClick={this.compare} />
           </div>
           <div>
             <CocktailList list={this.state.intersection === undefined ? [''] : this.state.intersection} />

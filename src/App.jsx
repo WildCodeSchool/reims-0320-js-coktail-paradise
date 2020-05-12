@@ -8,7 +8,6 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <NavBar />
         <Switch>
           <Route path="/cocktails/create">
             <MakeYourCocktail />
