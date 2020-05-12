@@ -1,5 +1,10 @@
 import React from 'react';
 import NavBar from './components/NavBar';
+import CocktailResult from './components/CocktailResult';
+import CocktailDescription from './components/CocktailDescription';
+import RandomCocktail from './components/RandomCocktail';
+import PopupAge from './components/PopupAge';
+import './components/popupAge.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MakeYourCocktail from "./components/MakeYourCocktail";
 import Home from "./components/Home";
@@ -19,6 +24,9 @@ class App extends React.Component {
           </Route>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/cocktails/random">
+            < RandomCocktail/>
           </Route>
         </Switch>
       </Router>
