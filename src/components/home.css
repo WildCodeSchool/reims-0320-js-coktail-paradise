@@ -30,6 +30,9 @@
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 10rem;
   height: 10rem;
   background: #34CFD2;
@@ -40,6 +43,34 @@
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: black 1px 1px 0px;
+  box-shadow: black 2px 3px 7px;
+}
+
+.homeButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: flex-end;
+  background-color: #34CFD2;
+  font-family: 'Kalam', cursive;
+  text-shadow: black 3px 4px 0px;
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+  height: 4vh;
+  width: 4vh;
+  border-radius: 90px;
+  box-shadow: black 2px 3px 2px;
+  font-weight: bold;
+  font-size: 1.8rem;
+  border: none;
+  padding : 1rem;
+  position: relative;
+  left: -20px;
+  top: -20px;
+
+
+   
 }
 
 footer {
@@ -56,4 +87,12 @@ footer a {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
 }

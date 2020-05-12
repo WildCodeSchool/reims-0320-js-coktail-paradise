@@ -33,21 +33,21 @@ class Cocktail extends React.Component {
               <img className="cocktailThumb" src={this.state.cocktailDescription.strDrinkThumb} alt={this.state.cocktailDescription.strDrink} />
             </div>
             <div className='TextDescription'>
-              <h1>{this.state.cocktailDescription.strDrink}</h1>
-              <h2>Ingredients :</h2>
-              <ul>
-                <li>{this.state.cocktailDescription.strIngredient1}</li>
-                <li>{this.state.cocktailDescription.strIngredient2}</li>
-                <li>{this.state.cocktailDescription.strIngredient3}</li>
-                <li>{this.state.cocktailDescription.strIngredient4}</li>
-                <li>{this.state.cocktailDescription.strIngredient5}</li>
+              <h1 className="TitleDrink">{this.state.cocktailDescription.strDrink}</h1>
+              <h2 className="TitleDrink">Ingredients :</h2>
+              <ul className='ul'>
+                <li className='li'>{this.state.cocktailDescription.strIngredient1}</li>
+                <li className='li'>{this.state.cocktailDescription.strIngredient2}</li>
+                <li className='li'>{this.state.cocktailDescription.strIngredient3}</li>
+                <li className='li'>{this.state.cocktailDescription.strIngredient4}</li>
+                <li className='li'>{this.state.cocktailDescription.strIngredient5}</li>
               </ul>
             </div>
           </div>
           <div className='RecipeAndButton'>
             <div className='DivRecipe'>
-              <h2>Recipe :</h2>
-              <p>{this.state.cocktailDescription.strInstructions}</p>
+              <h2 className="TitleDrink">Recipe :</h2>
+              <p className="TitleDrink">{this.state.cocktailDescription.strInstructions}</p>
             </div>
             <div className='DivBackButton'>
               <button className='buttonClikedBack' type='button' onClick={() => this.props.clicked()}>Return</button>

@@ -1,4 +1,5 @@
-body{
+.BackCockChoice {
+    height: 100vh;
     background-color: #e4dabe;
 }
 
@@ -7,8 +8,16 @@ body{
     padding-bottom: 10vh;
 }
 
+.flexSearchBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .makeYourCocktail {
-    /* height: 100vh; */
+    background-color: #e4dabe;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -95,9 +104,6 @@ body{
     margin : 0.5rem;
 }
 
-   
-
-
 .hideDescription {
     display: none;
     text-align: center;
@@ -114,8 +120,8 @@ body{
     justify-content: center;
     padding-top: 5vh;
     padding-bottom: 5vh;
- 
-    
-    
+}
 
+.SelectOption{
+    border-radius: 8px;
 }

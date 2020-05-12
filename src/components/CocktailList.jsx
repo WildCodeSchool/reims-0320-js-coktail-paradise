@@ -1,5 +1,4 @@
 import React from 'react';
-import Cocktail from './Cocktail';
 import CocktailPreview from './CocktailPreview';
 
 function CocktailList({ list, errorMessage, errorShow, manageError }) {
@@ -13,7 +12,6 @@ function CocktailList({ list, errorMessage, errorShow, manageError }) {
         { list.map((cocktail) => <CocktailPreview cocktail={cocktail} />) }
       </div>
     </div>
-    
   );
 }
 

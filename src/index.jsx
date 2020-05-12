@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './Fonts/Tribeca.ttf'
 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
