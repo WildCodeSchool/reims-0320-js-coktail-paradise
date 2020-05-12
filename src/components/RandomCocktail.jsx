@@ -19,7 +19,7 @@ class RandomCocktail extends React.Component {
         this.setState({ randomCocktail: data.drinks[0] });
       });
   }
-
+  
   render() {
     return (
       <div>
@@ -39,16 +39,7 @@ class RandomCocktail extends React.Component {
               <li>{this.state.randomCocktail.strIngredient3}</li>
               <li>{this.state.randomCocktail.strIngredient4}</li>
               <li>{this.state.randomCocktail.strIngredient5}</li>
-              <li>{this.state.randomCocktail.strIngredient6}</li>
-              <li>{this.state.randomCocktail.strIngredient7}</li>
-              <li>{this.state.randomCocktail.strIngredient8}</li>
-              <li>{this.state.randomCocktail.strIngredient9}</li>
-              <li>{this.state.randomCocktail.strIngredient10}</li>
-              <li>{this.state.randomCocktail.strIngredient11}</li>
-              <li>{this.state.randomCocktail.strIngredient12}</li>
-              <li>{this.state.randomCocktail.strIngredient13}</li>
-              <li>{this.state.randomCocktail.strIngredient14}</li>
-              <li>{this.state.randomCocktail.strIngredient15}</li>
+              <li>{this.state.randomCocktail.forEach((ingredients) => ingredients.include(() => ) )}</li>
             </ul>
           </div>
           <div>
