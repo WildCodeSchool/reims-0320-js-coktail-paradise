@@ -28,18 +28,17 @@ class RandomCocktail extends React.Component {
   render() {
     return (
       <div className="randomCoctail">
-        <h1> Your Random Cocktail: </h1>
         <div>
           <Link className="homeButton" to="/">X</Link>
         </div>
+        <h1>Your Random Cocktail:</h1>
         <div className="randomCoctail-up">
           <img className="randomCocktail-img"
             src={this.state.randomCocktail.strDrinkThumb}
             alt={this.state.randomCocktail.strDrink}
           />
-          <div>
+          <div className="randomCoctail-right-img">
             <div className="randomCoctail-title">
-              
               <h2>{this.state.randomCocktail.strDrink}</h2>
             </div>
             <div className="randomCoctail-ingredients">
