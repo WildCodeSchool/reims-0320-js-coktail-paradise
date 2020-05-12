@@ -154,7 +154,7 @@ class App extends React.Component {
   }
 
   exitSite = () => {
-    alert('Goodbye');
+    window.history.back();
   }
 
   render() {
