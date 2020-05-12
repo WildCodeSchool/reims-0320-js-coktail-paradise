@@ -1,11 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
 import Select from './Select';
-import CocktailList from './CocktailList';
-import HomeButton from './HomeButton.jsx';
-import { Link } from "react-router-dom";
 import './makeYourCocktail.css';
+import './Cocktails.css';
+import CocktailList from './CocktailList';
+import { Link } from "react-router-dom";
 import './home.css';
+
 
 class MakeYourCocktail extends React.Component {
   constructor(props) {
@@ -21,8 +22,7 @@ class MakeYourCocktail extends React.Component {
       intersection: [],
       showYourCocktails: true,
       showDescription: true,
-      errorMessage: 'ERROOOOOOOOOOOOOORS',
-      errorShow: false,
+    
     };
   }
 
@@ -43,9 +43,6 @@ class MakeYourCocktail extends React.Component {
 
   setKeywords2 = (keywords2) => this.setState({ keywords2 });
 
-  manageError = () => {
-    this.setState({ errorShow: !this.state.errorShow });
-  }
 
   searchIngredient1 = () => {
     const { keywords1 } = this.state;
@@ -65,27 +62,13 @@ class MakeYourCocktail extends React.Component {
       });
   }
 
-  compare = () => {
-    if (this.state.cocktails1 === undefined || this.state.cocktails2 === undefined) {
-      this.setState({ errorMessage: 'Il manque un ingrédient' });
-      this.setState({ errorShow: true });
-    } else {
-      const intersection = this.state.cocktails1.filter((cocktail1) => this.state.cocktails2.findIndex((cocktail2) => cocktail1.strDrink === cocktail2.strDrink) !== -1);
-      this.setState({ intersection });
-      if (intersection.length === 0) {
-        this.setState({ errorMessage: 'aucun cocktail ne contient ces ingrédients' });
-        this.setState({ errorShow: true });
-      }
-    }
-  }
-
-  showYourCocktails = () => {
+  showYourCocktails =() => {
     this.setState({
       showYourCocktails: false,
     });
   }
 
-  showDescription = () => {
+  showDescription =() => {
     this.setState({
       showDescription: false,
     });
@@ -142,19 +125,29 @@ class MakeYourCocktail extends React.Component {
     }));
   };
 
+  cocktailListSort = (cocktail) => {
+    this.setState({ intersection: cocktail });
+  }
+
   render() {
+    const cocktailNumber = this.state.intersection.length;
     return (
-      <div className="BackCockChoice">
+      <div>
         <Link className="homeButton" to="/">
           X
         </Link>
-        <div className="makeYourCocktail">
-          <div className="searchBar">
-            <h2>Yours ingredients !</h2>
-            <Select setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} list={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
-          </div>
-          <div>
-            <CocktailList list={this.state.intersection === undefined ? [''] : this.state.intersection} />
+        <div>
+          <div className="text">
+            <div className="makeYourCocktail">
+              <div className="searchBar">
+                <h2>Yours ingredients !</h2>
+                <Select cocktailListSort={this.cocktailListSort} setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} cocktailsList={this.state.allCocktails} ingredientsList={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
+              </div>
+              <div>
+                <p>Number of cocktails: {cocktailNumber} </p>
+                <CocktailList list={this.state.intersection === undefined ? [''] : this.state.intersection} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
