@@ -9,8 +9,9 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import CocktailResult from './components/CocktailResult';
 import CocktailDescription from './components/CocktailDescription';
-import RandomButton from './components/RandomButton';
 import RandomCocktail from './components/RandomCocktail';
+import PopupAge from './components/PopupAge';
+import './components/popupAge.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,11 +29,13 @@ class App extends React.Component {
       showDescription: true,
       errorMessage: 'ERROOOOOOOOOOOOOORS',
       errorShow: false,
+      showPopup : false,
     };
   }
 
   componentDidMount() {
     this.getData();
+    this.togglePopup();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -130,6 +133,14 @@ class App extends React.Component {
     }));
   };
 
+  togglePopup = () => {
+    this.setState({ showPopup: !this.state.showPopup });
+  }
+
+  exitSite = () => {
+    window.history.back();
+  }
+
   cocktailListSort = (cocktail) => {
     this.setState({ intersection: cocktail });
   }
@@ -140,14 +151,15 @@ class App extends React.Component {
       <div>
         <div>
           <RandomCocktail />
+        { this.state.showPopup && <PopupAge closePopupEnter={this.togglePopup} closePopupExit={this.exitSite} /> }
+        </div>
+        <Home />
+        <div>
           <div className="text">
             <div className="makeYourCocktail">
               <div className="searchBar">
                 <h2>Yours ingredients !</h2>
                 <Select cocktailListSort={this.cocktailListSort} setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} cocktailsList={this.state.allCocktails} ingredientsList={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
-              </div>
-              <div>
-                <ButtonShow onClick={this.compare} />
               </div>
               <div>
                 <p>Number of cocktails: {cocktailNumber} </p>
