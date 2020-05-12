@@ -149,7 +149,7 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          {this.state.showPopup ? <PopupAge closePopupEnter={this.togglePopup} closePopupExit={this.exitSite} /> : null }
+        { this.state.showPopup && <PopupAge closePopupEnter={this.togglePopup} closePopupExit={this.exitSite} /> }
         </div>
         <Home />
         <div>
