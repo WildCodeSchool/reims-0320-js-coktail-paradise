@@ -1,3 +1,61 @@
 .randomCoctail{
   background-color: #e4dabe;
+  padding: 0;
+  margin: 0;
 }
+
+.homeButton{
+  position: fixed;
+
+}
+.h1{
+  margin-top: 3em;
+}
+.randomCoctail-up{
+ 
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.randomCocktail-img{
+  border-radius: 10px;
+  width: 170px;
+  height: 220px;
+  
+  
+
+}
+
+.randomCoctail-ingredients ul{
+  list-style-type: none;
+  text-align: center;
+  
+}
+
+.randomCoctail-instruction{
+  text-align: center;
+}
+.randomCoctail-instruction p{
+  margin-left:10px ;
+  margin-right: 10px;
+
+}
+
+
+
+.randomCoctail-button{
+  display: flex;
+  justify-content: center;
+  background-color: #0B899D;
+  color: white;
+  text-shadow: black 1px 1px 0px;
+  margin-bottom: 1vh;
+  box-shadow: black 2px 5px 8px;
+  font-weight: bold;
+  font-size: 1.8rem;
+  border: none;
+  margin : 0.5rem;
+  border-radius: 10px;
+}
+
