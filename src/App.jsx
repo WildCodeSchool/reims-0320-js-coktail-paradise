@@ -14,7 +14,7 @@ class App extends React.Component {
             <MakeYourCocktail />
           </Route>
           <Route path="/cocktails">
-          <ChooseYourCocktail />
+            <ChooseYourCocktail />
           </Route>
           <Route exact path="/">
             <Home />
