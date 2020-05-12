@@ -1,12 +1,11 @@
 import React from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 import Select from './Select';
 import './makeYourCocktail.css';
 import './Cocktails.css';
 import CocktailList from './CocktailList';
-import { Link } from "react-router-dom";
 import './home.css';
-
 
 class MakeYourCocktail extends React.Component {
   constructor(props) {
@@ -22,7 +21,6 @@ class MakeYourCocktail extends React.Component {
       intersection: [],
       showYourCocktails: true,
       showDescription: true,
-    
     };
   }
 
