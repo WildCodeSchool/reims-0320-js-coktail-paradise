@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import './randomCocktail.css'
+import './randomCocktail.css';
 class RandomCocktail extends React.Component {
   constructor(props) {
     super(props);
@@ -35,22 +35,11 @@ class RandomCocktail extends React.Component {
         <div className="randomCoctail-ingredients">
           <h3>Ingredient:</h3>
           <ul>
-            <li>{this.state.randomCocktail.strIngredient1}</li>
-            <li>{this.state.randomCocktail.strIngredient2}</li>
-            <li>{this.state.randomCocktail.strIngredient3}</li>
-            <li>{this.state.randomCocktail.strIngredient4}</li>
-            <li>{this.state.randomCocktail.strIngredient5}</li>
-            <li>{this.state.randomCocktail.strIngredient6}</li>
-            <li>{this.state.randomCocktail.strIngredient7}</li>
-            <li>{this.state.randomCocktail.strIngredient8}</li>
-            <li>{this.state.randomCocktail.strIngredient9}</li>
-            <li>{this.state.randomCocktail.strIngredient10}</li>
-            <li>{this.state.randomCocktail.strIngredient11}</li>
-            <li>{this.state.randomCocktail.strIngredient12}</li>
-            <li>{this.state.randomCocktail.strIngredient13}</li>
-            <li>{this.state.randomCocktail.strIngredient14}</li>
-            <li>{this.state.randomCocktail.strIngredient15}</li>
-          {/*this.state.randomCocktail.keys().filter((key) => key.startsWith('strIngredient')).map((stringredient) => console.log(stringredient))*/}
+            {Object.keys(this.state.randomCocktail).filter(
+              (key) => key.startsWith('strIngredient') && this.state.randomCocktail[key] != null,
+            ).map(
+              (strIngredient) => <li>{this.state.randomCocktail[strIngredient]}</li>
+            )}
           </ul>
         </div>
         <div className="randomCoctail-instruction">
