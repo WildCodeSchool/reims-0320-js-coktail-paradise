@@ -76,5 +76,4 @@ class Select extends React.Component {
     )
   }
 }
-
 export default Select;
