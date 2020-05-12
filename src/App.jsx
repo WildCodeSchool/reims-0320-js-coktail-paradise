@@ -1,7 +1,5 @@
 import React from 'react';
 import NavBar from './components/NavBar';
-import CocktailResult from './components/CocktailResult';
-import CocktailDescription from './components/CocktailDescription';
 import RandomCocktail from './components/RandomCocktail';
 import PopupAge from './components/PopupAge';
 import './components/popupAge.css';
@@ -9,7 +7,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MakeYourCocktail from "./components/MakeYourCocktail";
 import Home from "./components/Home";
 import ChooseYourCocktail from "./components/ChooseYourCocktail"
-import PopupAge from './components/PopupAge';
 import './components/popupAge.css';
 
 class App extends React.Component {
@@ -32,9 +29,13 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          {this.state.showPopup && <PopupAge closePopupEnter={this.togglePopup} closePopupExit={this.exitSite} /> }
+          {this.state.showPopup
+          && <PopupAge closePopupEnter={this.togglePopup} closePopupExit={this.exitSite} /> }
         </div>
         <Switch>
+          <Route path="/cocktails/random">
+            <RandomCocktail />
+          </Route>
           <Route path="/cocktails/create">
             <MakeYourCocktail />
           </Route>
@@ -44,9 +45,6 @@ class App extends React.Component {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/cocktails/random">
-            < RandomCocktail/>
-          </Route>
         </Switch>
       </Router>
     );
@@ -54,4 +52,3 @@ class App extends React.Component {
 }
 
 export default App;
-

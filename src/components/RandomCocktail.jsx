@@ -1,6 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
 import './randomCocktail.css';
+import { Link } from 'react-router-dom';
+import './home.css';
+
 class RandomCocktail extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +28,11 @@ class RandomCocktail extends React.Component {
   render() {
     return (
       <div className="randomCoctail">
-        <img className="" src={this.state.randomCocktail.strDrinkThumb}
+        <div>
+          <Link className="homeButton" to="/">X</Link>
+        </div>
+        <img className="randomCocktail-img"
+          src={this.state.randomCocktail.strDrinkThumb}
           alt={this.state.randomCocktail.strDrink}
         />
         <div className="randomCoctail-title">
@@ -38,7 +45,7 @@ class RandomCocktail extends React.Component {
             {Object.keys(this.state.randomCocktail).filter(
               (key) => key.startsWith('strIngredient') && this.state.randomCocktail[key] != null,
             ).map(
-              (strIngredient) => <li>{this.state.randomCocktail[strIngredient]}</li>
+              (strIngredient) => <li>{this.state.randomCocktail[strIngredient]}</li>,
             )}
           </ul>
         </div>
