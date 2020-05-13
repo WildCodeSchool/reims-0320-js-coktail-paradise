@@ -8,19 +8,27 @@ function Home() {
       <div className="home_image_top">
         <img src="https://media.discordapp.net/attachments/696746327899504720/707224272216784956/Barman.jpg?width=1178&height=923" alt="barman's picture" />
       </div>
-      <div className="home_texte">
-        What do you want today?
-      </div>
-      <div className="buttonsDiv">
-        <Link className="button" to="/cocktails">
-          Choose your Cocktail
-        </Link>
-        <Link className="button" to="/cocktails/create">
-          Make your Cocktail
-        </Link>
-        <Link className="button" to="/cocktails/random">
-          Random Cocktail
-        </Link>
+      <div className="menu">
+        <div className="home_texte">
+          What do you want today?
+        </div>
+        <div className="buttonsDiv">
+          <div className="buttonArea">
+            <Link className="button" to="/cocktails">
+              Choose your Cocktail
+            </Link>
+          </div>
+          <div className="buttonArea">
+            <Link className="button" to="/cocktails/create">
+              Make your Cocktail
+            </Link>
+          </div>
+          <div className="buttonArea">
+            <Link className="button" to="/cocktails/random">
+              Random Cocktail
+            </Link>
+          </div>
+        </div>
       </div>
       <footer>
         <a href="https://www.wildcodeschool.com/fr-FR">Wild Code School</a>

@@ -1,6 +1,10 @@
 .home {
   background: linear-gradient(0.25turn, #f9c379,#f8cb87, #f8d89d);
   margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .home_image_top {
@@ -19,22 +23,30 @@
   font-family: "Tribeca", cursive;
   color: #1b4d80;
   text-shadow: white 1px 1px 0px;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .buttonsDiv {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  margin-bottom: 2rem;
+  align-items: center;
+  height: 60vh;
 }
 
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 3rem;
   background: #34CFD2;
   border-radius: 1.5rem;
   text-align: center;
@@ -44,6 +56,7 @@
   font-weight: bold;
   text-shadow: black 1px 1px 0px;
   box-shadow: black 2px 3px 7px;
+  margin-bottom: 1rem;
 }
 
 .homeButton {
@@ -56,7 +69,6 @@
   text-shadow: black 3px 4px 0px;
   text-align: center;
   color: white;
-  margin-bottom: 1rem;
   height: 4vh;
   width: 4vh;
   border-radius: 90px;
@@ -65,7 +77,7 @@
   font-size: 1.8rem;
   border: none;
   padding : 1rem;
-  position: relative;
+  position: fixed;
   left: -20px;
   top: -20px;
 }
@@ -85,6 +97,7 @@ footer a {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 0.7rem;
 }
 
 a{
