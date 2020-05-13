@@ -19,13 +19,10 @@ class Select extends React.Component {
     let listeIngredients2 = [];
     let cocktailListSort = [];
 
-    const nonNullCoktails = this.props.cocktailsList.filter(
-      (cocktailByLetters) => cocktailByLetters.coktails != null,
-    );
-    nonNullCoktails.forEach((cocktailByLetters) => {
-      cocktailListSort.push(
-        ...cocktailByLetters.coktails.filter((cocktail) => Object.values(cocktail).includes(ingredient1)),
-      );
+    this.props.cocktailList.forEach((cocktail) => {
+      if (Object.values(cocktail).includes(ingredient1)) {
+        cocktailListSort.push(cocktail);
+      }
     });
 
     cocktailListSort.forEach((cocktail) => {
@@ -46,7 +43,7 @@ class Select extends React.Component {
       if (Object.values(cocktail).includes(event.target.value)) {
         console.log(cocktail);
         lastsCocktails = [...lastsCocktails, cocktail];
-        
+
       }
     });
     this.props.cocktailListSort(lastsCocktails);
