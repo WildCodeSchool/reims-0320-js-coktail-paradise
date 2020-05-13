@@ -1,5 +1,5 @@
 body{
-    background-color: #e4dabe;
+    background-color: #e7cfa2;
 }
 
 .modaleON {
@@ -27,7 +27,7 @@ body{
     font-family: 'Kalam', cursive;
     font-size: 3rem;
     padding: 1.5rem;
-    color: #0B899D;
+    color: #1b4d80;
 }
 
 .divButtonCocktail{
@@ -36,7 +36,7 @@ body{
 }
 
 .buttonCocktail {
-    background-color: #0B899D;
+    background-color: #1b4d80;
     font-family: 'Kalam', cursive;
     text-shadow: black 1px 1px 0px;
     margin-bottom: 1vh;
@@ -56,23 +56,5 @@ body{
 .divCocktailShow{
     display: flex;
     justify-content: center;
-}
-
-.buttonCocktailShow {
-    background-color: #0B899D;
-    font-family: 'Kalam', cursive;
-    text-shadow: black 1px 1px 0px;
-    margin-bottom: 1vh;
-    list-style-type: none;
-    text-align: center;
-    color: white;
-    padding: .3rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    box-shadow: black 2px 5px 8px;
-    font-weight: bold;
-    font-size: 1.8rem;
-    border: none;
-    margin : 0.5rem;
 }
 

@@ -34,7 +34,7 @@ class Cocktail extends React.Component {
             </div>
             <div className='TextDescription'>
               <h1 className="TitleDrink">{this.state.cocktailDescription.strDrink}</h1>
-              <h2 className="TitleDrink">Ingredients :</h2>
+              <h2 className="Title">Ingredients :</h2>
               <ul className='ul'>
                 <li className='li'>{this.state.cocktailDescription.strIngredient1}</li>
                 <li className='li'>{this.state.cocktailDescription.strIngredient2}</li>
@@ -46,8 +46,8 @@ class Cocktail extends React.Component {
           </div>
           <div className='RecipeAndButton'>
             <div className='DivRecipe'>
-              <h2 className="TitleDrink">Recipe :</h2>
-              <p className="TitleDrink">{this.state.cocktailDescription.strInstructions}</p>
+              <h2 className="Title">Recipe :</h2>
+              <p className="TextDrink">{this.state.cocktailDescription.strInstructions}</p>
             </div>
             <div className='DivBackButton'>
               <button className='buttonClikedBack' type='button' onClick={() => this.props.clicked()}>Return</button>

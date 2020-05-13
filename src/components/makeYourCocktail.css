@@ -1,6 +1,6 @@
 .BackCockChoice {
     height: 100vh;
-    background-color: #E4DABE;
+    background-color: #e7cfa2;
 }
 
 .flexSearchBar {
@@ -34,7 +34,7 @@
 }
 
 .butonCliked {
-    background-color: #0B899D;
+    background-color: #1b4d80;
     font-family: 'Kalam', cursive;
     text-shadow: black 1px 1px 0px;
     margin-bottom: 1vh;
@@ -54,7 +54,7 @@
 }
 
 .cocktails {
-    background-color: #0B899D;
+    background-color: #1b4d80;
     font-family: 'Kalam', cursive;
     text-shadow: black 1px 1px 0px;
     margin-bottom: 1vh;
@@ -95,18 +95,6 @@
     border-radius: 8px;
 }
 
-.selector {
-    width: 50%;
-    padding: 3px;
-    /* reset */
-    margin: 0;      
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
 .selectorDiv {
     display: flex;
     flex-direction: column;
@@ -115,12 +103,25 @@
     padding: 5px;
 }
 
-select {
-    background-color: white;
-    border: 1px solid #0B899D;
+.selector {
+    width: 50%;
+    padding: 3px;
+    border: 1px solid #1b4d80;
     border-radius: 5px;
+    -webkit-appearance: button;
 }
 
+select:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: #1b4d80;
+    color: white;
+}
+  
 .barmanQuestion {
     text-align: center;
     font-size: 1.5rem;
@@ -158,6 +159,8 @@ select {
 
 .paragraph {
     text-align: center;
+    color: #1b4d80;
+    font-weight: bold;
 }
 
 .CocktailResults {

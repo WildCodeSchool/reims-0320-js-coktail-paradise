@@ -7,6 +7,7 @@ import CocktailList from './CocktailList';
 import { Link } from "react-router-dom";
 import './home.css';
 import BarmanSmall from '../BarmanSmall.jpg';
+import WhiteArrow from '../white-arrow.png';
 
 
 class MakeYourCocktail extends React.Component {
