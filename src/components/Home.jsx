@@ -18,6 +18,9 @@ function Home() {
         <Link className="button" to="/cocktails/create">
           Make your Cocktail
         </Link>
+        <Link className="button" to="/cocktails/random">
+          Random Cocktail
+        </Link>
       </div>
       <footer>
         <a href="https://www.wildcodeschool.com/fr-FR">Wild Code School</a>

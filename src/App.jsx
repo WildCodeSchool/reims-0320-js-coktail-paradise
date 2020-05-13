@@ -143,9 +143,13 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          {this.state.showPopup && <PopupAge closePopupEnter={this.togglePopup} closePopupExit={this.exitSite} /> }
+          {this.state.showPopup
+          && <PopupAge closePopupEnter={this.togglePopup} closePopupExit={this.exitSite} /> }
         </div>
         <Switch>
+          <Route path="/cocktails/random">
+            <RandomCocktail />
+          </Route>
           <Route path="/cocktails/create">
             <MakeYourCocktail intersection={this.state.intersection} cocktailListSort={this.cocktailListSort} setKeywords1={this.setKeywords1} setKeywords2={this.setKeywords2} cocktailList={this.state.allCocktails} ingredientsList={this.state.ingredientsList} onSearch1={this.searchIngredient1} onSearch2={this.searchIngredient2} />
           </Route>
@@ -155,9 +159,6 @@ class App extends React.Component {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/cocktails/random">
-            <RandomCocktail />
-          </Route>
         </Switch>
       </Router>
     );
@@ -165,4 +166,3 @@ class App extends React.Component {
 }
 
 export default App;
-

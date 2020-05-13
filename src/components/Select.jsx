@@ -53,19 +53,17 @@ class Select extends React.Component {
   render() {
     return(
       <div>
-      <div>
-        <p>Ingredient 1</p>
+      <div className="selectorDiv">
         <label htmlFor="ingredient-select" />
-        <select name="ingredients1" id="ingredient1-select" onChange={(event) => this.seachInput1(event)}>
-          <option value="">--Please choose your ingredient</option>
+        <select className="selector" name="ingredients1" id="ingredient1-select" onChange={(event) => this.seachInput1(event)}>
+          <option value="">--Ingredient 1</option>
           {this.props.ingredientsList.map((ingredient) => <option value={ingredient}>{ingredient}</option>) }
         </select>
       </div>
-      <div>
-      <p>Ingredient 2</p>
+      <div className="selectorDiv">
         <label htmlFor="ingredient-select" />
-        <select name="ingredients2" id="ingredient2-select" onChange={(event) => this.seachInput2(event)}>
-          <option value="">--Please choose your ingredient</option>
+        <select className="selector" name="ingredients2" id="ingredient2-select" onChange={(event) => this.seachInput2(event)}>
+          <option value="">--Ingredient 2</option>
           {this.state.listeIngredients2.map((ingredient) => <option value={ingredient}>{ingredient}</option>) }
         </select>
       </div>
