@@ -92,19 +92,23 @@
 }
 
 .buttonClikedBack {
-    height: 10vh;
-    width: 70vw;
-    background-color: #1b4d80;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0B899D;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 4px 4px 5px;
     color: white;
-    box-shadow: black 2px 5px 8px;
-    text-shadow: black 1px 1px 0px;
-    border-radius: 10px;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 90px;
+    box-shadow: black 2px 3px 2px;
+    font-size: 1.8rem;
     border: none;
-    font-family: 'Tribeca', cursive;
-    text-align: center;
-    padding: .3rem;
-    margin : 1rem;
-    font-size: 1.3rem;
+    padding : 0.9rem;
+    position: fixed;
+    left: -10px;
+    top: -10px;
 }
 
 
