@@ -50,7 +50,7 @@ class Cocktail extends React.Component {
               <p className="TextDrink">{this.state.cocktailDescription.strInstructions}</p>
             </div>
             <div className='DivBackButton'>
-              <button className='buttonClikedBack' type='button' onClick={() => this.props.clicked()}>Return</button>
+              <button className='buttonClikedBack' type='button' onClick={() => this.props.clicked()}>←</button>
             </div>
           </div>
         </div>

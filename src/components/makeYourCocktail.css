@@ -104,22 +104,19 @@
 }
 
 .selector {
-    width: 50%;
+    width: 70%;
     padding: 3px;
     border: 1px solid #1b4d80;
     border-radius: 5px;
-    -webkit-appearance: button;
-}
-
-select:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    background: #1b4d80;
+    background-color: #1b4d80;
     color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    text-shadow: black 0px 0px 3px;
+    -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
   
 .barmanQuestion {
@@ -136,12 +133,12 @@ select:before {
 
 .instruction {
     float: left;
-    margin-top: 30px;
+    margin-top: 0px;
     width: 90%;
 }
 
 .barmanPicture {
-    max-width: 100vw;
+    width: 100vw;
     position: absolute;
     top: 0;
     z-index: -1;
@@ -152,7 +149,7 @@ select:before {
     border-radius: 10px;
     box-shadow: black 5px 5px 8px;
     width: 80%;
-    float: left;;
+    float: left;
     margin-top: 320px;
     padding: 5px;
 }
@@ -161,8 +158,13 @@ select:before {
     text-align: center;
     color: #1b4d80;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .CocktailResults {
     margin-top: 100px;
+}
+
+.arrowSelector {
+    background-color: red;
 }
