@@ -26,7 +26,7 @@ class CocktailPreview extends React.Component {
         </div>
         <div className="ResultDescription">
           <h1>{this.props.cocktail.strDrink}</h1>
-          <button className='buttonCliked' type="button" onClick={this.clicked}>Show Cocktail description</button>
+          <button className='buttonCliked' type="button" onClick={this.clicked}>Show Recipe</button>
         </div>
         {this.state.clicked && <Cocktail clicked={this.clicked} cocktail={this.props.cocktail} />}
       </div>

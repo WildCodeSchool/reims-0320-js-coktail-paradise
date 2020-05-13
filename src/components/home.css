@@ -1,5 +1,5 @@
 .home {
-  background: #E4DABE;
+  background: linear-gradient(0.25turn, #f9c379,#f8cb87, #f8d89d);
   margin: 0 auto;
 }
 
@@ -16,8 +16,8 @@
 .home_texte {
   text-align: center;
   font-size: 2rem;
-  font-family: "Tribeca";
-  color: #0B899D;
+  font-family: "Tribeca", cursive;
+  color: #1b4d80;
   text-shadow: white 1px 1px 0px;
   margin-bottom: 2rem;
 }
@@ -51,7 +51,7 @@
   flex-direction: column;
   justify-content: baseline;
   align-items: flex-end;
-  background-color: #34CFD2;
+  background-color: #0B899D;
   font-family: 'Kalam', cursive;
   text-shadow: black 3px 4px 0px;
   text-align: center;
@@ -68,13 +68,11 @@
   position: relative;
   left: -20px;
   top: -20px;
-
-
-   
 }
 
 footer {
   background-color: #34CFD2;
+  border-radius: 8px 8px 0px 0px;
 }
 
 footer a {

@@ -1,14 +1,28 @@
+* {
+    font-family: 'Kalam', cursive;
+}
+
 .TextDrink{
     text-align: center;
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: #1b4d80;
 }
 
 .TitleDrink {
+    font-family: 'Tribeca', cursive;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    color: #1b4d80;
+    text-shadow: white 1px 1px 0px;
     margin: 0;
     padding: 0.5rem;
+}
+
+.Title {
+    text-decoration: underline;
+    font-size: 1.4rem;
+    color: #1b4d80;
 }
 
 .ul{
@@ -21,11 +35,12 @@
     text-align: center;
     margin: 0;
     padding: 0;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
+    color: #1b4d80;
 }
 
 .modalDisplay{
-    background-color: #e4dabe;
+    background-color: #e7cfa2;
     position: fixed;
     top: 0;
     left: 0;
@@ -79,17 +94,17 @@
 .buttonClikedBack {
     height: 10vh;
     width: 70vw;
-    background-color: #0B899D;
+    background-color: #1b4d80;
     color: white;
     box-shadow: black 2px 5px 8px;
     text-shadow: black 1px 1px 0px;
     border-radius: 10px;
     border: none;
-    font-family: 'Kalam', cursive;
+    font-family: 'Tribeca', cursive;
     text-align: center;
     padding: .3rem;
     margin : 1rem;
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 

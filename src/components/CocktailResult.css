@@ -20,9 +20,9 @@
     margin: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    align-items: center;
     background-color: white;
-    border: solid #0B899D 2px;
+    border: solid #1b4d80 1px;
     border-radius: 10px;
     margin-bottom: 1rem;
     padding: 0.5rem;
@@ -49,21 +49,23 @@
     justify-content: space-around;
     align-items: center;
     width: 60%;
+    margin-left: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
 }
 
 .buttonCliked {
-    background-color: #0B899D;
-    font-family: 'Kalam', cursive;
+    background-color: #1b4d80;
+    font-family: 'Tribeca', cursive;
     text-shadow: black 1px 1px 0px;
-    margin-bottom: 1vh;
     list-style-type: none;
     text-align: center;
     color: white;
-    padding: .3rem;
-    margin-bottom: 1rem;
+    padding: .4rem;
     border-radius: 10px;
     box-shadow: black 2px 5px 8px;
     border: none;
     margin : 0.5rem;
-    font-size: 11px;
+    font-size: 0.7rem;
+    width: 80%;
 }
