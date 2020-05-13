@@ -29,7 +29,7 @@ class RandomCocktail extends React.Component {
     return (
       <div className="randomCoctail">
         <div>
-          <Link className="homeButton" to="/">X</Link>
+          <Link className="random-homeButton" to="/">X</Link>
         </div>
         <h1>Your Random Cocktail:</h1>
         <div className="randomCoctail-up">
