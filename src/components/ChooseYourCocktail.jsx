@@ -12,7 +12,8 @@ function ChooseYourCocktail({ cocktailList }) {
   const query = useQuery();
   const page = parseInt((query.get('page') ?? 1), 10);
   const pageSize = 3;
-  const cocktailListLength = parseInt(cocktailList.length / 3)+1;
+  const cocktailListLength = Math.ceil(cocktailList.length / 3);
+  console.log(cocktailListLength);
 
   return (
     <div className="choseCocktailGlobal"> 
