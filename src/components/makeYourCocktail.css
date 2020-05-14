@@ -168,3 +168,45 @@
 .arrowSelector {
     background-color: red;
 }
+
+.choseCocktailGlobal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 100vh;
+}
+
+.listChoseCocktail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:70vh;
+}
+
+.cocktailName {
+    height: 60%;
+}
+
+.navPages {
+    background-color: #1b4d80;
+    font-family: 'Kalam', cursive;
+    text-shadow: black 1px 1px 0px;
+    margin-bottom: 1vh;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: black 2px 5px 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 30vw;
+}   
+
+.navPageDisplay {
+    display: flex;
+    justify-content: space-around;
+    
+}
+    
