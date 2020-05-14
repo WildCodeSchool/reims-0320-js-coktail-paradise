@@ -31,7 +31,7 @@ class RandomCocktail extends React.Component {
         <div>
           <Link className="random-homeButton" to="/">X</Link>
         </div>
-        <h1>Your Random Cocktail:</h1>
+        <h1>{this.state.randomCocktail.strDrink}</h1>
         <div className="randomCoctail-up">
           <img className="randomCocktail-img"
             src={this.state.randomCocktail.strDrinkThumb}
@@ -39,7 +39,6 @@ class RandomCocktail extends React.Component {
           />
           <div className="randomCoctail-right-img">
             <div className="randomCoctail-title">
-              <h2>{this.state.randomCocktail.strDrink}</h2>
             </div>
             <div className="randomCoctail-ingredients">
               <h3>Ingredient:</h3>
@@ -54,7 +53,7 @@ class RandomCocktail extends React.Component {
           </div>
         </div>
         <div className="randomCoctail-recipe">
-          <h3> Recipe </h3>
+          <h3> Recipe: </h3>
           <p>{this.state.randomCocktail.strInstructions}</p>
         </div>
         <div>
