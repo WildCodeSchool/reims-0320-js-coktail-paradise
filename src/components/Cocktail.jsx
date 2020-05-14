@@ -1,7 +1,7 @@
 import React from 'react';
-import './Cocktails.css'
+import './Cocktails.css';
 import './makeYourCocktail.css';
-import "./CocktailDescription.css";
+import './CocktailDescription.css';
 import Axios from 'axios';
 
 class Cocktail extends React.Component {
@@ -26,32 +26,32 @@ class Cocktail extends React.Component {
 
   render() {
     return (
-      <div className='modalDisplay'>
-        <div className='ContainersCocktails'>
-          <div className='ImageAndIngredients'>
+      <div className="modalDisplay">
+        <div className="ContainersCocktails">
+          <h1 className="TitleDrink">{this.state.cocktailDescription.strDrink}</h1>
+          <div className="ImageAndIngredients">
             <div>
               <img className="cocktailThumb" src={this.state.cocktailDescription.strDrinkThumb} alt={this.state.cocktailDescription.strDrink} />
             </div>
-            <div className='TextDescription'>
-              <h1 className="TitleDrink">{this.state.cocktailDescription.strDrink}</h1>
+            <div className="TextDescription">
               <h2 className="Title">Ingredients :</h2>
-              <ul className='ul'>
-                <li className='li'>{this.state.cocktailDescription.strIngredient1}</li>
-                <li className='li'>{this.state.cocktailDescription.strIngredient2}</li>
-                <li className='li'>{this.state.cocktailDescription.strIngredient3}</li>
-                <li className='li'>{this.state.cocktailDescription.strIngredient4}</li>
-                <li className='li'>{this.state.cocktailDescription.strIngredient5}</li>
+              <ul className="ul">
+                <li className="li">{this.state.cocktailDescription.strIngredient1}</li>
+                <li className="li">{this.state.cocktailDescription.strIngredient2}</li>
+                <li className="li">{this.state.cocktailDescription.strIngredient3}</li>
+                <li className="li">{this.state.cocktailDescription.strIngredient4}</li>
+                <li className="li">{this.state.cocktailDescription.strIngredient5}</li>
               </ul>
             </div>
           </div>
-          <div className='RecipeAndButton'>
-            <div className='DivRecipe'>
-              <h2 className="Title">Recipe :</h2>
-              <p className="TextDrink">{this.state.cocktailDescription.strInstructions}</p>
-            </div>
-            <div className='DivBackButton'>
-              <button className='buttonClikedBack' type='button' onClick={() => this.props.clicked()}>←</button>
-            </div>
+        </div>
+        <div className="RecipeAndButton">
+          <div className="DivRecipe">
+            <h2 className="Title">Recipe :</h2>
+            <p className="TextDrink">{this.state.cocktailDescription.strInstructions}</p>
+          </div>
+          <div className="DivBackButton">
+            <button className="buttonClikedBack" type="button" onClick={() => this.props.clicked()}>←</button>
           </div>
         </div>
       </div>
