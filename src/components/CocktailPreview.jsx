@@ -20,7 +20,8 @@ class CocktailPreview extends React.Component {
 
   render() {
     return (
-      <div className='DivResult'>
+      <div>
+        <div className='DivResult'>
         <div>
           <img className='ImageCocktail' src={this.props.cocktail.strDrinkThumb} alt={this.props.cocktail.strDrink} />
         </div>
@@ -29,7 +30,9 @@ class CocktailPreview extends React.Component {
           <button className='buttonCliked' type="button" onClick={this.clicked}>Show Recipe</button>
         </div>
         {this.state.clicked && <Cocktail clicked={this.clicked} cocktail={this.props.cocktail} />}
+        </div>
       </div>
+      
     );
   }
 }

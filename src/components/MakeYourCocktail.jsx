@@ -6,6 +6,7 @@ import CocktailList from './CocktailList';
 import { Link } from "react-router-dom";
 import './home.css';
 import BarmanSmall from '../BarmanSmall.jpg';
+import Arrow from '../Arrow.png';
 
 
 class MakeYourCocktail extends React.Component {
@@ -35,6 +36,11 @@ class MakeYourCocktail extends React.Component {
                 <Select cocktailListSort={this.props.cocktailListSort} setKeywords1={this.props.setKeywords1} setKeywords2={this.props.setKeywords2} cocktailList={this.props.cocktailList} ingredientsList={this.props.ingredientsList} onSearch1={this.props.searchIngredient1} onSearch2={this.props.searchIngredient2} />
                 <p className="paragraph">Number of cocktails: {cocktailNumber} </p>
               </div>
+              {cocktailNumber != 0 ? (
+                <div className="arrow-container">
+                  <img className="arrow-anim" src={Arrow}/>
+                </div>
+              ) : ''}
               <div className="CocktailResults">
                 <CocktailList list={this.props.intersection === undefined ? [''] : this.props.intersection} />
               </div>
