@@ -30,26 +30,19 @@
   top: -20px; 
   position: fixed;
 }
-
 .randomCoctail h1 {
   font-size: 2em;
   text-decoration: underline;
   margin-top: 35px ;
-  margin-bottom: 30px;
-  font-family: 'Tribeca', cursive;
-  text-align: center;
-  font-size: 1.6rem;
-  color: #1b4d80;
-  text-shadow: white 1px 1px 0px;
+  margin-bottom: 10px;
 }
-  
 .randomCoctail h2{
   font-family: 'Tribeca', cursive;
   margin-top: 0px;
   margin-bottom: 5px;
 }
 
-.randomCocktail-up {
+.randomCoctail-up {
   display: flex;
   justify-content:space-around;
   height: 40vh;
@@ -62,41 +55,36 @@
   width: 170px;
   height: 220px; 
 }
-  
-.randomCocktail-right-img {
+.randomCoctail-right-img {
   text-align: center;
 }
-  
-.randomCocktail h3{
+.randomCoctail h3{
   margin-bottom: 0px;
   margin-top: 0px;
   font-size: 1.5em;
 }
-  
-.randomCocktail-ingredients ul li{
+.randomCoctail-ingredients ul li{
   list-style-type: none;
   text-align: center;
-  color: #1b4d80;
 }
-
 .randomCoctail-ingredients ul{
   padding-left: 0px;
+
 }
-  
 .randomCoctail-ingredients{
 margin-left: 20px;
 }
 
 .randomCoctail-recipe {
   text-align: center;
+
   height: 40vh;
 }
 
-.randomCocktail-instruction p{
-  margin-left: 10px ;
+.randomCoctail-instruction p{
+  margin-left:10px ;
   margin-right: 10px;
   margin-top: 5px;
-  color: #1b4d80;
 }
 
 .randomCoctail-button{
@@ -106,7 +94,6 @@ margin-left: 20px;
   text-shadow: black 1px 1px 0px;
   margin-bottom: 1vh;
   box-shadow: black 2px 5px 8px;
-  font-family: 'Tribeca', cursive;
   font-weight: bold;
   font-size: 1.2em;
   border: none;
