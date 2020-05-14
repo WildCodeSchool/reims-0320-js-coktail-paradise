@@ -108,7 +108,7 @@ a:hover{
   text-decoration: none;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
 
   body {
     background: linear-gradient(0.25turn, #f9c379,#f8cb87, #f8d89d);

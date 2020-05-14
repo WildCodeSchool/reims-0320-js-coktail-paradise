@@ -165,7 +165,7 @@
     margin-top: 100px;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1200px) {
 
     .barmanPicture {
         width: 50vw;
