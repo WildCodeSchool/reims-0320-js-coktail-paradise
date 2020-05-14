@@ -5,6 +5,7 @@ import './Cocktails.css';
 import CocktailList from './CocktailList';
 import { Link } from "react-router-dom";
 import './home.css';
+import BarmanSmall from '../BarmanSmall.jpg';
 
 
 class MakeYourCocktail extends React.Component {
@@ -26,12 +27,15 @@ class MakeYourCocktail extends React.Component {
         <div>
           <div className="text">
             <div className="makeYourCocktail">
-              <div className="searchBar">
-                <h2>Yours ingredients !</h2>
-                <Select cocktailListSort={this.props.cocktailListSort} setKeywords1={this.props.setKeywords1} setKeywords2={this.props.setKeywords2} cocktailList={this.props.cocktailList} ingredientsList={this.props.ingredientsList} onSearch1={this.props.searchIngredient1} onSearch2={this.props.searchIngredient2} />
+              <img src={BarmanSmall} alt="barman-picture" className="barmanPicture" />
+              <div className="instruction">
+                <h2 className="barmanQuestion">Please choose your ingredients</h2>
               </div>
-              <div>
-                <p>Number of cocktails: {cocktailNumber} </p>
+              <div className="searchBar">
+                <Select cocktailListSort={this.props.cocktailListSort} setKeywords1={this.props.setKeywords1} setKeywords2={this.props.setKeywords2} cocktailList={this.props.cocktailList} ingredientsList={this.props.ingredientsList} onSearch1={this.props.searchIngredient1} onSearch2={this.props.searchIngredient2} />
+                <p className="paragraph">Number of cocktails: {cocktailNumber} </p>
+              </div>
+              <div className="CocktailResults">
                 <CocktailList list={this.props.intersection === undefined ? [''] : this.props.intersection} />
               </div>
             </div>
