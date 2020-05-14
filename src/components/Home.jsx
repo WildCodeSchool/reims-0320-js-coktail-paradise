@@ -1,12 +1,15 @@
 import React from 'react';
 import './home.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import Barman from '../Barman.jpg';
+import Logo from '../Logo_Project_2.png';
 
 function Home() {
   return (
     <div className="home">
+      <img src={Logo} alt="logo-cocktail-paradise" className="logo" />
       <div className="home_image_top">
-        <img src="https://media.discordapp.net/attachments/696746327899504720/707224272216784956/Barman.jpg?width=1178&height=923" alt="barman's picture" />
+        <img src={Barman} alt="barman's picture" />
       </div>
       <div className="menu">
         <div className="home_texte">

@@ -23,7 +23,7 @@
     background-color: white;
     border: solid #1b4d80 1px;
     border-radius: 10px;
-    margin: 0px 1rem 0px 1rem;
+    margin: 30px 1rem 0px 1rem;
     padding: 0.5rem;
 }
 
@@ -68,4 +68,37 @@
     margin : 0.5rem;
     font-size: 0.7rem;
     width: 80%;
+}
+
+@media screen and (min-width: 1200px) {
+
+    .DivResult {
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .ImageCocktail {
+        width: 25vw;
+        height: 25vw;
+    }
+    
+    .ResultDescription {
+        font-size: 1.8rem;
+    }
+
+    .buttonCliked {
+        padding: .6rem;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .DivResult {
+        border: solid #1b4d80 2px;
+    }
+
+    .selector {
+        cursor: pointer;
+    }
+
+
 }

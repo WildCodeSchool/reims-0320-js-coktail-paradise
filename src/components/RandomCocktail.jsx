@@ -37,8 +37,15 @@ class RandomCocktail extends React.Component {
             src={this.state.randomCocktail.strDrinkThumb}
             alt={this.state.randomCocktail.strDrink}
           />
+
           <div className="randomCoctail-right-img">
+<<<<<<< HEAD
             <div className="randomCoctail-ingredients">
+=======
+            <div className="randomCoctail-title">
+            </div>
+            <div className="randomCocktail-ingredients">
+>>>>>>> master
               <h3>Ingredient:</h3>
               <ul>
                 {Object.keys(this.state.randomCocktail).filter(
@@ -55,7 +62,7 @@ class RandomCocktail extends React.Component {
           <p>{this.state.randomCocktail.strInstructions}</p>
         </div>
         <div>
-          <button className="randomCoctail-button" type="button" onClick={this.searchRandomCocktail}>New random cocktail</button>
+          <button className="randomCocktail-button" type="button" onClick={this.searchRandomCocktail}>New random cocktail</button>
         </div>
       </section>
     );
