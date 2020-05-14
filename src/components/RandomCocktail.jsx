@@ -38,8 +38,6 @@ class RandomCocktail extends React.Component {
             alt={this.state.randomCocktail.strDrink}
           />
           <div className="randomCoctail-right-img">
-            <div className="randomCoctail-title">
-            </div>
             <div className="randomCoctail-ingredients">
               <h3>Ingredient:</h3>
               <ul>
