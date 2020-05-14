@@ -173,6 +173,13 @@
     justify-content: space-between;
     text-align: center;
     height: 100vh;
+    color: #1b4d80;
+    font-size: 1.8rem;
+}
+
+.font {
+    font-family: "Tribeca", cursive;
+    margin: 0;
 }
 
 .listChoseCocktail {
