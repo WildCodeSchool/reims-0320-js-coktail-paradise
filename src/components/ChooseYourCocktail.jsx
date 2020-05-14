@@ -12,7 +12,7 @@ function ChooseYourCocktail({ cocktailList }) {
   const query = useQuery();
   const page = parseInt((query.get('page') ?? 1), 10);
   const pageSize = 3;
-  const cocktailListLength = parseInt(cocktailList.length / 3);
+  const cocktailListLength = parseInt(cocktailList.length / 3)+1;
 
   return (
     <div className="choseCocktailGlobal"> 
@@ -26,7 +26,7 @@ function ChooseYourCocktail({ cocktailList }) {
       <div className="navPageDisplay">
         {page > 1 ? <Link to={`?page=${page - 1}`} className="navPages">&lt;</Link> : ''}
         <div className="navPages">{page}</div>
-        {page <= cocktailListLength ? <Link to={`?page=${page + 1}`} className="navPages">&gt;</Link> : ''}
+        {page < cocktailListLength ? <Link to={`?page=${page + 1}`} className="navPages">&gt;</Link> : ''}
       </div>
       </div>
   );
