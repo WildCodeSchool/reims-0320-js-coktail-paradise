@@ -25,7 +25,7 @@ class CocktailPreview extends React.Component {
           <img className='ImageCocktail' src={this.props.cocktail.strDrinkThumb} alt={this.props.cocktail.strDrink} />
         </div>
         <div className="ResultDescription">
-          <h1>{this.props.cocktail.strDrink}</h1>
+          <h1 className="cocktailName">{this.props.cocktail.strDrink}</h1>
           <button className='buttonCliked' type="button" onClick={this.clicked}>Show Recipe</button>
         </div>
         {this.state.clicked && <Cocktail clicked={this.clicked} cocktail={this.props.cocktail} />}

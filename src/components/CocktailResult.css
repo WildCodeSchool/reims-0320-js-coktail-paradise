@@ -17,14 +17,13 @@
 
 
 .DivResult {
-    margin: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: white;
     border: solid #1b4d80 1px;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin: 30px 1rem 0px 1rem;
     padding: 0.5rem;
 }
 
@@ -46,12 +45,13 @@
 .ResultDescription{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 60%;
+    height: ;
     margin-left: 1.5rem;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
 }
 
 .buttonCliked {
