@@ -40,7 +40,7 @@
 }
 
 .modalDisplay{
-    background-color: #e7cfa2;
+    background: linear-gradient(0.25turn, #f9c379,#f8cb87, #f8d89d);
     position: fixed;
     top: 0;
     left: 0;
@@ -109,6 +109,35 @@
     position: fixed;
     left: -10px;
     top: -10px;
+}
+
+@media screen and (min-width: 769px) {
+
+    .cocktailThumb {
+        width: 370px;
+        height: 420px;
+    }
+
+    .TextDrink{
+        font-size: 2rem;
+    }
+    
+    .TitleDrink {
+        font-size: 4rem;
+    }
+
+    .Title {
+        font-size: 2rem;
+    }
+
+    .li {
+        font-size: 1.8rem;
+    }
+
+    .buttonClikedBack {
+        cursor: pointer;
+    }
+
 }
 
 

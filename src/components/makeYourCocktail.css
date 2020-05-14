@@ -1,6 +1,6 @@
 .BackCockChoice {
     height: 100vh;
-    background-color: #e7cfa2;
+    background: linear-gradient(0.25turn, #f9c379,#f8cb87, #f8d89d);
 }
 
 .flexSearchBar {
@@ -163,4 +163,39 @@
 
 .CocktailResults {
     margin-top: 100px;
+}
+
+@media screen and (min-width: 769px) {
+
+    .barmanPicture {
+        width: 50vw;
+    }
+
+    .barmanQuestion {
+        font-size: 2rem;
+        margin: 2rem 25rem;
+        padding: 30px;
+        width: 40%;
+    }
+
+    .searchBar {
+        width: 40%;
+        margin-top: 800px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .paragraph {
+        font-size: 1.8rem;
+    }
+
+    .CocktailResults {
+        margin-top: 300px;
+    }
+
+    .selector {
+        width: 70%;
+        padding: 10px;
+        font-size: 1.8rem;
+    }
 }

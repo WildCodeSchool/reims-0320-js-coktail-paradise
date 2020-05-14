@@ -69,3 +69,36 @@
     font-size: 0.7rem;
     width: 80%;
 }
+
+@media screen and (min-width: 769px) {
+
+    .DivResult {
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .ImageCocktail {
+        width: 25vw;
+        height: 25vw;
+    }
+    
+    .ResultDescription {
+        font-size: 1.8rem;
+    }
+
+    .buttonCliked {
+        padding: .6rem;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .DivResult {
+        border: solid #1b4d80 2px;
+    }
+
+    .selector {
+        cursor: pointer;
+    }
+
+
+}
