@@ -10,6 +10,10 @@ class Select extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.cocktailListSort([]);
+  }
+
   seachInput1 = (event) => {
     this.props.setKeywords1(event.target.value);
     this.ingredient2Loading(event.target.value);
@@ -33,7 +37,7 @@ class Select extends React.Component {
       }
     });
     listeIngredients2 = [...new Set(listeIngredients2)];
-
+    listeIngredients2.sort();
     this.setState({ listeIngredients2, cocktailListSort });
   }
 
