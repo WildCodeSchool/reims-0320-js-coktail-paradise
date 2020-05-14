@@ -27,19 +27,19 @@ class RandomCocktail extends React.Component {
 
   render() {
     return (
-      <div className="randomCocktail">
+      <section className="randomCoctail">
         <div>
           <Link className="random-homeButton" to="/">X</Link>
         </div>
-        <h1>Your Random Cocktail:</h1>
-        <div className="randomCocktail-up">
+        <h1>{this.state.randomCocktail.strDrink}</h1>
+        <div className="randomCoctail-up">
           <img className="randomCocktail-img"
             src={this.state.randomCocktail.strDrinkThumb}
             alt={this.state.randomCocktail.strDrink}
           />
-          <div className="randomCocktail-right-img">
-            <div className="randomCocktail-title">
-              <h2>{this.state.randomCocktail.strDrink}</h2>
+
+          <div className="randomCoctail-right-img">
+            <div className="randomCoctail-title">
             </div>
             <div className="randomCocktail-ingredients">
               <h3>Ingredient:</h3>
@@ -53,14 +53,14 @@ class RandomCocktail extends React.Component {
             </div>
           </div>
         </div>
-        <div className="randomCocktail-instruction">
-          <h3> Instructions: </h3>
+        <div className="randomCoctail-recipe">
+          <h3> Recipe: </h3>
           <p>{this.state.randomCocktail.strInstructions}</p>
         </div>
         <div>
           <button className="randomCocktail-button" type="button" onClick={this.searchRandomCocktail}>New random cocktail</button>
         </div>
-      </div>
+      </section>
     );
   }
 }
