@@ -107,3 +107,33 @@ a{
 a:hover{
   text-decoration: none;
 }
+
+@media screen and (min-width: 1200px) {
+
+  body {
+    background: linear-gradient(0.25turn, #f9c379,#f8cb87, #f8d89d);
+  }
+
+  .home_texte {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  footer a {
+    font-size: 1.3rem;
+  }
+
+  .buttonsDiv {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .button {
+    width: 17rem;
+    height: 17rem;
+    font-size: 2rem;
+    margin: 4rem;
+  }
+
+}
