@@ -7,6 +7,13 @@
   justify-content: space-between;
 }
 
+.logo {
+  position: absolute;
+  top: 0;
+  height: 11vh;
+  rotate: -20deg;
+}
+
 .home_image_top {
   display: flex;
   flex-direction: row;
@@ -112,6 +119,10 @@ a:hover{
 
   body {
     background: linear-gradient(0.25turn, #f9c379,#f8cb87, #f8d89d);
+  }
+
+  .logo {
+    height: 40vh;
   }
 
   .home_texte {
