@@ -15,11 +15,11 @@ function ChooseYourCocktail({ cocktailList }) {
   const cocktailListLength = Math.ceil(cocktailList.length / 3);
 
   return (
-    <div className="choseCocktailGlobal"> 
+    <div className="choseCocktailGlobal">
       <div>
         <Link className="homeButton" to="/">X</Link>
       </div>
-      <div>Chose your cocktail !</div>
+      <p className="font">Choose your cocktail !</p>
       <div className="listChoseCocktail">
         {cocktailList.slice((page - 1) * pageSize, page * pageSize).map((cocktail) => <CocktailPreview cocktail={cocktail} />)}
       </div>
@@ -28,7 +28,7 @@ function ChooseYourCocktail({ cocktailList }) {
         <div className="navPages">{page}</div>
         {page < cocktailListLength ? <Link to={`?page=${page + 1}`} className="navPages">&gt;</Link> : ''}
       </div>
-      </div>
+    </div>
   );
 }
 
