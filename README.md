@@ -1,5 +1,8 @@
 Made By Himeur Malik, Mora Angelique, Perrin Lucas, Rodier Joel.
 
+Available at:
+https://cocktail-paradise.netlify.app/ 
+
 This software is royalty-free.
   
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
