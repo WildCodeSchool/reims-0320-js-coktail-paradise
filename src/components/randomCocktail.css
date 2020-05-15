@@ -45,6 +45,7 @@
 .randomCocktail-up {
   display: flex;
   justify-content:space-around;
+  align-items: center;
   height: 40vh;
   margin: 0 1em 0 1em;
 }
@@ -56,6 +57,7 @@
 }
 .randomCocktail-right-img {
   text-align: center;
+  overflow: scroll;
 }
 .randomCocktail h3{
   margin-bottom: 0px;
@@ -72,16 +74,24 @@
 }
 .randomCocktail-ingredients{
   margin-left: 1em;
+  height: 28vh;
 }
 
 .randomCocktail-recipe {
   text-align: center;
+  
+  height: 40vh;
   margin: 0 1em 0 1em;
   height: 50vh;
 }
 
 .randomCocktail-instruction p{
   margin: 0 0 0 0;
+}
+
+.cocktailDescription {
+  overflow: scroll;
+  height: 70%;
 }
 
 .randomCocktail-button{
