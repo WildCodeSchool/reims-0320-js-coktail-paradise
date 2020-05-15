@@ -52,7 +52,7 @@ class RandomCocktail extends React.Component {
         </div>
         <div className="randomCocktail-recipe">
           <h3> Recipe: </h3>
-          <p>{this.state.randomCocktail.strInstructions}</p>
+          <p className="cocktailDescription">{this.state.randomCocktail.strInstructions}</p>
         </div>
         <button className="randomCocktail-button" type="button" onClick={this.searchRandomCocktail}>New random cocktail</button>
       </section>
