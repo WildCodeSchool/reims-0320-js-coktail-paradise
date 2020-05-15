@@ -31,10 +31,10 @@
   position: fixed;
 }
 .randomCocktail h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   text-decoration: underline;
-  margin-top: 35px ;
-  margin-bottom: 10px;
+  margin-top: 2em ;
+  margin-bottom: 0.5em;
 }
 .randomCocktail h2{
   font-family: 'Tribeca', cursive;
@@ -46,8 +46,7 @@
   display: flex;
   justify-content:space-around;
   height: 40vh;
-  margin-left: 10px ;
-  margin-right: 10px;
+  margin: 0 1em 0 1em;
 }
 
 .randomCocktail-img {
@@ -72,19 +71,17 @@
 
 }
 .randomCocktail-ingredients{
-margin-left: 20px;
+  margin-left: 1em;
 }
 
 .randomCocktail-recipe {
   text-align: center;
-
-  height: 40vh;
+  margin: 0 1em 0 1em;
+  height: 50vh;
 }
 
 .randomCocktail-instruction p{
-  margin-left:10px ;
-  margin-right: 10px;
-  margin-top: 5px;
+  margin: 0 0 0 0;
 }
 
 .randomCocktail-button{
@@ -92,13 +89,37 @@ margin-left: 20px;
   background-color: #1b4d80;
   color: white;
   text-shadow: black 1px 1px 0px;
-  margin-bottom: 1vh;
+  margin-bottom: 1em;
   box-shadow: black 2px 5px 8px;
   font-weight: bold;
   font-size: 1.2em;
   border: none;
-  margin : 0.5rem;
   border-radius: 10px;
   text-shadow: black 1px 2px 0px;
-  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: sticky;
+  top:1em;
+  z-index: 9999;
+}
+@media screen and (min-width: 1200px){
+  .randomCocktail-recipe {
+    text-align: center;
+    margin: 0 1em 0 1em;
+    height: 40vh;
+    max-width: 50vw;
+  }
+  .randomCocktail-up {
+    display: flex;
+    justify-content:space-around;
+    height: 50vh;
+    margin: 0 1em 0 1em;
+    max-width: 50vw;
+  }
+  .randomCocktail-img {
+    border-radius: 10px;
+    width: 255px;
+    height: 330px; 
+  }
 }
